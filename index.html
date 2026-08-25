@@ -2307,61 +2307,81 @@
     }
 
     .choice-btn.correct-flash {
-      animation: flashSpring 0.55s ease forwards;
-      background: linear-gradient(135deg, #2ECC71, #00D2D3) !important;
+      animation: flashCelebration 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      background: linear-gradient(135deg, #10B981 0%, #06B6D4 50%, #3B82F6 100%) !important;
       color: #FFFFFF !important;
-      --btn-shadow: var(--green-shadow) !important;
+      --btn-shadow: #059669 !important;
+      border-color: #FFFFFF !important;
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.85), 0 10px 0 #059669 !important;
+      z-index: 10;
     }
 
-    @keyframes flashSpring {
-      0% { transform: scale(1); }
-      40% { transform: scale(1.2) rotate(6deg); }
-      70% { transform: scale(0.95) rotate(-3deg); }
-      100% { transform: scale(1) rotate(0deg); }
+    @keyframes flashCelebration {
+      0% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.22) rotate(-6deg); filter: brightness(1.25); }
+      50% { transform: scale(1.28) rotate(6deg); filter: brightness(1.35); }
+      75% { transform: scale(1.15) rotate(-2deg); }
+      100% { transform: scale(1.08) rotate(0deg); }
     }
 
-    .ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 209, 59, 0.6);
-      transform: scale(0);
-      animation: ripplePop 0.55s ease-out forwards;
+    /* Floating Praise Badge ("HEBAT!", "PINTAR!", "LUAR BIASA!") */
+    .praise-bubble {
+      position: fixed;
       pointer-events: none;
+      z-index: 9999;
+      font-family: 'Baloo 2', 'Fredoka', sans-serif;
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 900;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #FF5E62 0%, #FF9900 50%, #FFD13B 100%);
+      padding: 8px 24px;
+      border-radius: 40px;
+      border: 4px solid #FFFFFF;
+      box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2), 0 12px 28px rgba(255, 94, 98, 0.6);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+      animation: praiseFloatUp 0.9s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+      white-space: nowrap;
     }
 
-    @keyframes ripplePop {
-      to { transform: scale(3); opacity: 0; }
+    @keyframes praiseFloatUp {
+      0% { transform: translate(-50%, 0) scale(0.2) rotate(-15deg); opacity: 0; }
+      35% { transform: translate(-50%, -45px) scale(1.25) rotate(5deg); opacity: 1; }
+      65% { transform: translate(-50%, -75px) scale(1.15) rotate(-3deg); opacity: 1; }
+      100% { transform: translate(-50%, -120px) scale(0.9) rotate(0deg); opacity: 0; }
     }
 
-    .mini-q {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--navy-ink);
-      text-align: center;
-      line-height: 1.35;
+    /* Expanding Rainbow Shockwave Ring */
+    .shockwave-ring {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9990;
+      border-radius: 50%;
+      border: 6px solid #FFD13B;
+      box-shadow: 0 0 20px #FFD13B, inset 0 0 20px #2ECC71;
+      transform: translate(-50%, -50%) scale(0.2);
+      animation: shockwaveExpand 0.75s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
     }
 
-    .mini-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      font-size: 38px;
-      min-height: 48px;
+    @keyframes shockwaveExpand {
+      0% { transform: translate(-50%, -50%) scale(0.2); opacity: 1; border-width: 8px; }
+      50% { opacity: 0.85; }
+      100% { transform: translate(-50%, -50%) scale(2.8); opacity: 0; border-width: 1px; }
     }
 
     .star-particle {
-      position: absolute;
+      position: fixed;
       pointer-events: none;
-      z-index: 100;
-      font-size: 32px;
-      animation: starFly 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      z-index: 9998;
+      font-size: clamp(24px, 3.2vw, 36px);
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+      animation: starFly 0.85s cubic-bezier(0.2, 0.9, 0.3, 1.2) forwards;
+      user-select: none;
     }
 
     @keyframes starFly {
-      0% { transform: translate(0, 0) scale(0.5) rotate(0deg); opacity: 1; }
-      100% { transform: translate(var(--tx), var(--ty)) scale(1.4) rotate(var(--rot)); opacity: 0; }
+      0% { transform: translate(-50%, -50%) scale(0.3) rotate(0deg); opacity: 1; }
+      40% { transform: translate(calc(-50% + var(--tx) * 0.7), calc(-50% + var(--ty) * 0.7)) scale(1.4) rotate(calc(var(--rot) * 0.5)); opacity: 1; }
+      100% { transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.4) rotate(var(--rot)); opacity: 0; }
     }
 
     /* ===== SOLO GAME ARENAS ===== */
@@ -4594,20 +4614,24 @@
       setTimeout(() => beep(980, 0.18, 'sine', 0.18, 1200), 100);
     }
 
-    // Suara Benar Ceria (Arpeggio Lonceng Bintang Emas)
+    // Suara Benar Ceria & Meriah (Chime Melodi Emas + Harmonik Berdenting)
     function playCorrect(player = 1) {
       if (!settings.sound) return;
       const baseNotes = player === 1 
-        ? [523.25, 659.25, 783.99, 1046.50]  // C5, E5, G5, C6 (Mayor ceria)
-        : [587.33, 739.99, 880.00, 1174.66]; // D5, F#5, A5, D6 (Segar ceria)
+        ? [523.25, 659.25, 783.99, 1046.50, 1318.51]  // C5, E5, G5, C6, E6 (Mayor penuh kemenangan)
+        : [587.33, 739.99, 880.00, 1174.66, 1479.98]; // D5, F#5, A5, D6, F#6 (Segar bersemangat)
 
       baseNotes.forEach((f, i) => {
         setTimeout(() => {
-          beep(f, 0.22, 'triangle', 0.22);
-          beep(f * 2, 0.14, 'sine', 0.08); // sparkle harmonic
-        }, i * 65);
+          beep(f, 0.28, 'triangle', 0.24);
+          beep(f * 2, 0.16, 'sine', 0.12); // sparkling bell overtone
+          if (i === baseNotes.length - 1) {
+            // Dentingan puncak ekstra ceria
+            setTimeout(() => beep(f * 1.5, 0.35, 'sine', 0.15), 50);
+          }
+        }, i * 55);
       });
-      vibrate([15, 30, 20]);
+      vibrate([20, 30, 20, 40]);
     }
 
     // Suara Salah Ramah / Lucu (Boing Lembut, tidak mengagetkan anak)
@@ -4728,21 +4752,44 @@
       if (el) speakText(el.textContent);
     });
 
-    function burstStarParticles(x, y) {
-      const emojis = ['⭐', '✨', '🌟', '💛', '🎉', '🎈', '🦉', '🌸'];
-      for (let i = 0; i < 8; i++) {
+    function burstStarParticles(x, y, praiseWord = null) {
+      // 1. Gelombang Kejutan Berkilau (Rainbow Shockwave Ring)
+      const ring = document.createElement('div');
+      ring.className = 'shockwave-ring';
+      ring.style.left = x + 'px';
+      ring.style.top = y + 'px';
+      const ringColors = ['#FFD13B', '#2ECC71', '#00D2D3', '#FF5E62', '#9B51E0'];
+      ring.style.borderColor = pick(ringColors);
+      document.body.appendChild(ring);
+      setTimeout(() => ring.remove(), 750);
+
+      // 2. Balon Teks Pujian Ceria Spontan ("HEBAT!", "PINTAR!", "LUAR BIASA!")
+      const praises = ['✨ HEBAT! ✨', '🌟 PINTAR! 🌟', '🎉 LUAR BIASA! 🎉', '🥳 TOP BANGET! 🥳', '💯 JUARA! 💯', '⭐ KREATIF! ⭐'];
+      const textBadge = praiseWord || pick(praises);
+      const praiseEl = document.createElement('div');
+      praiseEl.className = 'praise-bubble';
+      praiseEl.textContent = textBadge;
+      praiseEl.style.left = x + 'px';
+      praiseEl.style.top = (y - 10) + 'px';
+      document.body.appendChild(praiseEl);
+      setTimeout(() => praiseEl.remove(), 920);
+
+      // 3. Ledakan Partikel Bintang & Konfeti Penuh Warna (16 Partikel Emas & Permen)
+      const emojis = ['⭐', '✨', '🌟', '💛', '🎉', '🎈', '🦉', '🌸', '🍬', '💎', '🌈', '🔥'];
+      const count = 16;
+      for (let i = 0; i < count; i++) {
         const p = document.createElement('div');
         p.className = 'star-particle';
         p.textContent = pick(emojis);
         p.style.left = x + 'px';
         p.style.top = y + 'px';
-        const angle = (Math.PI * 2 / 8) * i + (Math.random() * 0.4);
-        const dist = 50 + Math.random() * 50;
+        const angle = (Math.PI * 2 / count) * i + ((Math.random() - 0.5) * 0.4);
+        const dist = 70 + Math.random() * 95;
         p.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
-        p.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
-        p.style.setProperty('--rot', (Math.random() * 360) + 'deg');
+        p.style.setProperty('--ty', (Math.sin(angle) * dist - 25) + 'px'); // sedikit dorongan ke atas seperti kembang api
+        p.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
         document.body.appendChild(p);
-        setTimeout(() => p.remove(), 750);
+        setTimeout(() => p.remove(), 850);
       }
     }
 
