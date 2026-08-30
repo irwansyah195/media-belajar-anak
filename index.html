@@ -473,7 +473,14 @@
       width: clamp(190px, 32vw, 270px);
       height: clamp(190px, 32vw, 270px);
       margin: 0 auto;
-      filter: drop-shadow(0 14px 28px rgba(155, 81, 224, 0.45));
+      filter: drop-shadow(0 14px 28px rgba(34, 139, 34, 0.45));
+    }
+
+    .mascot-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .splash-logo {
@@ -590,7 +597,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 16px 4px;
+      padding: 10px 16px 14px;
+      margin-bottom: 14px;
       flex-shrink: 0;
     }
 
@@ -665,10 +673,11 @@
     #topic-screen {
       overflow-y: auto;
       align-items: stretch;
-      justify-content: space-between;
-      padding: 12px 28px 18px;
+      justify-content: flex-start;
+      padding: 14px 28px 24px;
       width: 100%;
       height: 100%;
+      gap: 8px;
     }
 
     .topic-header-banner {
@@ -680,7 +689,8 @@
       align-items: center;
       gap: 18px;
       box-shadow: 0 10px 0 #CBD5E1, 0 16px 26px rgba(30, 41, 59, 0.08);
-      margin-bottom: 12px;
+      margin-top: 4px;
+      margin-bottom: 22px;
       width: 100%;
     }
 
@@ -718,7 +728,7 @@
       justify-content: center;
       gap: 16px;
       position: relative;
-      padding: 10px 0 20px;
+      padding: 6px 0 20px;
     }
 
     .carousel-stage-wrapper {
@@ -1356,43 +1366,7 @@
       transform: scale(1.1);
     }
 
-    /* Balloon Pop Mission Box */
-    .balloon-mission-box {
-      position: absolute;
-      top: 14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255, 255, 255, 0.98);
-      border: 4.5px solid #FFD13B;
-      border-radius: 28px;
-      padding: 10px 28px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      box-shadow: 0 8px 0 #D47A00, 0 14px 28px rgba(0,0,0,0.15);
-      z-index: 20;
-      max-width: 65%;
-      text-align: center;
-      pointer-events: auto;
-    }
-
-    .balloon-mission-prompt {
-      font-family: 'Baloo 2', sans-serif;
-      font-weight: 800;
-      font-size: clamp(20px, 2.3vw, 28px);
-      color: var(--navy-ink);
-      line-height: 1.2;
-    }
-
-    .balloon-mission-visual {
-      font-size: clamp(32px, 3.8vw, 48px);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      justify-content: center;
-    }
+    /* Balloon Pop Mission Box (Consolidated in Balloon Pop Arena section) */
 
     /* Cocokkan Ceria Arena (Direct Match) */
     .match-easy-arena {
@@ -1685,85 +1659,127 @@
       transition: left 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    /* Balloon Pop Arena */
+    /* Balloon Pop Arena (Simultaneous 2P Duel) */
     .balloon-arena {
-      width: 100%;
-      height: clamp(420px, 58vh, 600px);
-      position: relative;
-      background: linear-gradient(180deg, rgba(224, 242, 254, 0.85) 0%, rgba(254, 243, 199, 0.85) 100%);
-      border-radius: 38px;
-      border: 4.5px solid #FFFFFF;
-      box-shadow: 0 12px 0 #CBD5E1;
-      overflow: hidden;
-      margin-bottom: 8px;
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .balloon-score-bar {
       width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: 10px;
+      flex: 1;
+      justify-content: flex-start;
+      min-height: 0;
+    }
+
+    .balloon-top-bar {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      padding: 14px 24px 6px;
-      z-index: 10;
-      box-sizing: border-box;
-      pointer-events: none;
+      width: 100%;
+      gap: 12px;
     }
 
-    .b-score-tag {
-      font-size: clamp(15px, 1.8vw, 20px);
-      font-weight: 800;
-      padding: 8px 24px;
+    .balloon-target-banner {
+      flex: 1;
+      max-width: 440px;
+      background: linear-gradient(135deg, #FFFFFF, #FFFBEB);
+      border: 3.5px solid #FFD13B;
+      box-shadow: 0 6px 0 #D47A00, 0 10px 20px rgba(255, 209, 59, 0.25);
       border-radius: 24px;
-      color: #FFFFFF;
-      box-shadow: 0 5px 0 rgba(0, 0, 0, 0.18);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      pointer-events: auto;
-    }
-
-    .b-score-tag.p1 { background: var(--candy-coral); }
-    .b-score-tag.p2 { background: var(--candy-teal); }
-
-    .balloon-mission-box {
-      background: #FFFFFF;
-      border: 4px solid #FFD13B;
-      border-radius: 26px;
-      padding: 10px 28px;
-      box-shadow: 0 6px 0 #CBD5E1, 0 10px 20px rgba(0,0,0,0.06);
+      padding: 6px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      z-index: 8;
-      margin-top: 4px;
-      max-width: 85%;
-    }
-
-    .balloon-mission-prompt {
-      font-family: 'Baloo 2', sans-serif;
-      font-weight: 800;
-      font-size: clamp(17px, 2vw, 24px);
-      color: var(--navy-ink);
+      gap: 4px;
+      animation: targetPulse 2.5s infinite ease-in-out;
       text-align: center;
     }
 
-    .balloon-mission-visual {
+    .balloon-target-prompt {
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 800;
+      font-size: clamp(15px, 1.7vw, 21px);
+      color: var(--navy-ink);
+      line-height: 1.2;
+    }
+
+    .balloon-target-visual {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: clamp(34px, 4vw, 52px);
-      min-height: 44px;
+      min-height: 32px;
+    }
+
+    .balloon-status-pill {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--navy-ink);
+      background: rgba(255, 255, 255, 0.95);
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 1px 12px;
+      box-shadow: 0 2px 0 #CBD5E1;
+      line-height: 1.2;
+    }
+
+    .balloon-duel-boards {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .balloon-player-area {
+      flex: 1;
+      background: linear-gradient(180deg, rgba(224, 242, 254, 0.85) 0%, rgba(254, 243, 199, 0.85) 100%);
+      border-radius: 28px;
+      padding: 10px 14px 14px;
+      border: 3.5px solid #FFFFFF;
+      box-shadow: 0 8px 0 #CBD5E1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      min-height: clamp(260px, 34vh, 360px);
+    }
+
+    .balloon-player-area.p1 {
+      border-color: #FFD1D5;
+      box-shadow: 0 8px 0 #FFA8B0;
+      background: linear-gradient(180deg, rgba(255, 241, 242, 0.85) 0%, rgba(254, 243, 199, 0.85) 100%);
+    }
+
+    .balloon-player-area.p2 {
+      border-color: #A7F3D0;
+      box-shadow: 0 8px 0 #6EE7B7;
+      background: linear-gradient(180deg, rgba(240, 253, 250, 0.85) 0%, rgba(254, 243, 199, 0.85) 100%);
+    }
+
+    .balloon-sky-zone {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      flex: 1;
+      padding: 10px 8px 16px;
+      box-sizing: border-box;
+      gap: clamp(10px, 1.4vw, 20px);
+      min-height: 200px;
     }
 
     .balloon-item {
-      position: absolute;
-      width: clamp(100px, 11vw, 140px);
-      height: clamp(135px, 15vw, 185px);
+      position: relative;
+      flex: 1;
+      max-width: clamp(105px, 12vw, 145px);
+      height: clamp(140px, 16vw, 190px);
       border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
       display: flex;
       flex-direction: column;
@@ -1771,60 +1787,118 @@
       justify-content: center;
       cursor: pointer;
       transform-style: preserve-3d;
-      box-shadow: inset -7px -7px 14px rgba(0, 0, 0, 0.15), inset 7px 7px 14px rgba(255, 255, 255, 0.75), 0 12px 24px rgba(0, 0, 0, 0.18);
+      box-shadow: inset -6px -6px 14px rgba(0, 0, 0, 0.15), inset 6px 6px 14px rgba(255, 255, 255, 0.75), 0 12px 24px rgba(0, 0, 0, 0.16);
       transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-      border: 4px solid rgba(255, 255, 255, 0.9);
-      bottom: 24px;
+      border: 3.5px solid rgba(255, 255, 255, 0.95);
       z-index: 5;
-      animation: balloonFloatAnim 2.5s ease-in-out infinite alternate;
+      user-select: none;
     }
 
-    @keyframes balloonFloatAnim {
-      0% { transform: translateY(0) rotate(-2deg); }
+    .balloon-item:nth-child(1) {
+      animation: balloonFloatLeft 2.8s ease-in-out infinite alternate;
+    }
+    .balloon-item:nth-child(2) {
+      animation: balloonFloatMid 2.6s ease-in-out infinite alternate 0.3s;
+    }
+    .balloon-item:nth-child(3) {
+      animation: balloonFloatRight 2.9s ease-in-out infinite alternate 0.6s;
+    }
+
+    @keyframes balloonFloatLeft {
+      0% { transform: translateY(6px) rotate(-2deg); }
+      100% { transform: translateY(-12px) rotate(2deg); }
+    }
+    @keyframes balloonFloatMid {
+      0% { transform: translateY(-10px) rotate(2deg); }
+      100% { transform: translateY(8px) rotate(-2deg); }
+    }
+    @keyframes balloonFloatRight {
+      0% { transform: translateY(4px) rotate(-1deg); }
       100% { transform: translateY(-14px) rotate(3deg); }
     }
 
     .balloon-item::after {
       content: '';
       position: absolute;
-      bottom: -11px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
       width: 0;
       height: 0;
-      border-left: 11px solid transparent;
-      border-right: 11px solid transparent;
-      border-bottom: 14px solid inherit;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 12px solid inherit;
     }
 
     .balloon-item::before {
       content: '';
       position: absolute;
-      bottom: -32px;
+      bottom: -28px;
       left: 50%;
-      width: 3.5px;
-      height: 28px;
+      width: 3px;
+      height: 24px;
       background: rgba(100, 116, 139, 0.6);
       transform: translateX(-50%);
     }
 
     .balloon-item:hover {
-      transform: scale(1.15) translateY(-20px) !important;
+      transform: scale(1.12) translateY(-10px) !important;
     }
 
-    .balloon-val {
+    .balloon-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      padding: 0 8px 12px 8px;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .balloon-icon {
+      font-size: clamp(34px, 3.8vw, 48px);
+      line-height: 1;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .balloon-text {
       font-family: 'Baloo 2', sans-serif;
-      font-weight: 800;
-      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 900;
+      font-size: clamp(14px, 1.55vw, 19px);
       color: #FFFFFF;
-      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-      pointer-events: none;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55), 0 0 10px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      line-height: 1.1;
+      letter-spacing: -0.2px;
+      white-space: nowrap;
     }
 
-    .balloon-emoji-count {
-      font-size: 30px;
-      pointer-events: none;
-      letter-spacing: 1px;
+    .balloon-text.standalone {
+      font-size: clamp(36px, 4.2vw, 52px);
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      .balloon-duel-boards {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .balloon-player-area {
+        width: 100%;
+        min-height: 220px;
+      }
+      .balloon-top-bar {
+        gap: 8px;
+      }
     }
 
     /* Memory Match Arena */
@@ -1866,22 +1940,27 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      gap: clamp(6px, 1vw, 12px);
+      gap: clamp(10px, 1.4vw, 16px);
       width: 100%;
-      max-width: 900px;
+      max-width: 860px;
       perspective: 1000px;
       flex: 1;
-      max-height: calc(100vh - 240px);
+      margin: 0 auto;
     }
 
     .memory-card {
-      height: clamp(80px, 13vh, 120px);
-      min-height: 70px;
+      height: clamp(110px, 17vh, 155px);
+      min-height: 100px;
       border-radius: 22px;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
       cursor: pointer;
+      user-select: none;
+    }
+
+    .memory-card:hover {
+      transform: translateY(-4px) scale(1.02);
     }
 
     .memory-card.flipped,
@@ -1889,42 +1968,380 @@
       transform: rotateY(180deg);
     }
 
+    .memory-card.flipped:hover,
+    .memory-card.matched:hover {
+      transform: rotateY(180deg) translateY(-2px);
+    }
+
     .memory-face {
       position: absolute;
       inset: 0;
-      border-radius: 24px;
+      border-radius: 22px;
       backface-visibility: hidden;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 3.5px solid #FFFFFF;
+      border: 4px solid #FFFFFF;
       box-shadow: 0 6px 0 #CBD5E1, 0 8px 16px rgba(0, 0, 0, 0.08);
-      padding: 6px 10px;
+      padding: 8px 6px;
       text-align: center;
-      word-break: break-word;
       overflow: hidden;
+      box-sizing: border-box;
     }
 
     .memory-face.back {
       background: linear-gradient(135deg, #FFD13B, #FF9900);
       color: #FFFFFF;
-      font-size: 60px;
+      font-size: clamp(38px, 4.5vw, 54px);
       font-weight: 800;
+      border: 4px solid #FFFFFF;
+      box-shadow: 0 6px 0 #D47A00, 0 8px 16px rgba(0, 0, 0, 0.08);
     }
 
     .memory-face.front {
       background: #FFFFFF;
       transform: rotateY(180deg);
+      gap: 4px;
+    }
+
+    .memory-card-img {
+      font-size: clamp(40px, 5.2vw, 60px);
+      line-height: 1.1;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .memory-card-img.num-badge {
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 900;
+      font-size: clamp(34px, 4.5vw, 48px);
+      width: clamp(48px, 6vw, 64px);
+      height: clamp(48px, 6vw, 64px);
+      border-radius: 50%;
+      background: var(--badge-bg, #FFE8EA);
+      color: var(--badge-color, #FF5E62);
+      border: 3.5px solid var(--badge-border, #FFB3B8);
+      box-shadow: 0 4px 0 var(--badge-shadow, #FF8B93);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .memory-card-img.letter-badge {
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 900;
+      font-size: clamp(34px, 4.5vw, 48px);
+      width: clamp(48px, 6vw, 64px);
+      height: clamp(48px, 6vw, 64px);
+      border-radius: 18px;
+      background: var(--badge-bg, #F4ECF7);
+      color: var(--badge-color, #9B51E0);
+      border: 3.5px solid var(--badge-border, #D7BDE2);
+      box-shadow: 0 4px 0 var(--badge-shadow, #8E44AD);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .memory-card-label {
       font-family: 'Baloo 2', sans-serif;
       font-weight: 800;
-      font-size: clamp(30px, 3.6vw, 48px);
+      font-size: clamp(14px, 1.7vw, 18px);
       color: var(--navy-ink);
+      line-height: 1.15;
+      text-align: center;
+      max-width: 95%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none;
     }
 
     .memory-card.matched .memory-face.front {
-      background: #E8FCFC;
-      border-color: var(--candy-teal);
-      box-shadow: 0 9px 0 var(--teal-shadow), 0 0 24px rgba(0, 210, 211, 0.45);
+      background: linear-gradient(135deg, #E0FBFB, #C2F6F6);
+      border-color: #00D2D3;
+      box-shadow: 0 7px 0 #009E9F, 0 0 20px rgba(0, 210, 211, 0.5);
+      animation: matchCardPulse 0.5s ease;
+    }
+
+    @keyframes matchCardPulse {
+      0% { transform: rotateY(180deg) scale(0.94); }
+      50% { transform: rotateY(180deg) scale(1.08); }
+      100% { transform: rotateY(180deg) scale(1); }
+    }
+
+    /* Memory Duel Scoreboard & Arena (Simultaneous Play) */
+    .memory-duel-scoreboard {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto 10px;
+      gap: 12px;
+    }
+
+    .memory-player-score-card {
+      flex: 1;
+      max-width: 320px;
+      background: #FFFFFF;
+      border: 3.5px solid #FFFFFF;
+      border-radius: 24px;
+      box-shadow: 0 6px 0 #CBD5E1, 0 8px 16px rgba(0, 0, 0, 0.06);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .memory-player-score-card.p1 {
+      border-color: #FFE4E6;
+    }
+    .memory-player-score-card.p2 {
+      border-color: #CCFBF1;
+    }
+
+    .memory-player-score-card.is-leading {
+      border-color: #FFD13B !important;
+      box-shadow: 0 6px 0 #F59E0B, 0 0 22px rgba(255, 209, 59, 0.5) !important;
+      transform: scale(1.03);
+    }
+
+    .score-card-avatar {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score-card-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .score-card-name {
+      font-size: clamp(13px, 1.4vw, 15px);
+      font-weight: 800;
+      color: var(--navy-light);
+      font-family: 'Baloo 2', sans-serif;
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+
+    .score-card-points {
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 900;
+      color: var(--navy-ink);
+      font-family: 'Baloo 2', sans-serif;
+      line-height: 1.1;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .score-card-points span {
+      font-size: clamp(30px, 3.6vw, 42px);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .memory-player-score-card.p1 .score-card-points span {
+      color: var(--candy-coral);
+      text-shadow: 0 2px 4px rgba(255, 94, 98, 0.28);
+    }
+
+    .memory-player-score-card.p2 .score-card-points span {
+      color: #009E9F;
+      text-shadow: 0 2px 4px rgba(0, 210, 211, 0.28);
+    }
+
+    .leader-badge {
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      background: linear-gradient(135deg, #FFD13B, #FF9900);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 10px;
+      border-radius: 12px;
+      box-shadow: 0 3px 0 #D47A00;
+      font-family: 'Baloo 2', sans-serif;
+      display: none;
+      animation: badgeBounce 0.4s ease;
+    }
+
+    .memory-player-score-card.is-leading .leader-badge {
+      display: block;
+    }
+
+    .memory-player-score-card.p1.is-active-turn {
+      border-color: #FF5E62 !important;
+      box-shadow: 0 6px 0 var(--coral-shadow), 0 0 20px rgba(255, 94, 98, 0.45) !important;
+      transform: scale(1.04);
+    }
+
+    .memory-player-score-card.p2.is-active-turn {
+      border-color: #00D2D3 !important;
+      box-shadow: 0 6px 0 var(--teal-shadow), 0 0 20px rgba(0, 210, 211, 0.45) !important;
+      transform: scale(1.04);
+    }
+
+    .turn-badge {
+      position: absolute;
+      top: -11px;
+      right: 10px;
+      background: linear-gradient(135deg, #FFD13B, #FF9900);
+      color: #78350F;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 10px;
+      border-radius: 12px;
+      box-shadow: 0 3px 0 #D47A00;
+      font-family: 'Baloo 2', sans-serif;
+      display: none;
+      animation: badgeBounce 0.4s ease;
+      white-space: nowrap;
+    }
+
+    .memory-player-score-card.is-active-turn .turn-badge {
+      display: block;
+    }
+
+    @keyframes badgeBounce {
+      0% { transform: scale(0.5); }
+      70% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    .memory-duel-status {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border: 3.5px solid #FFFFFF;
+      border-radius: 20px;
+      box-shadow: 0 5px 0 #CBD5E1;
+      padding: 6px 16px;
+      text-align: center;
+      min-width: 170px;
+    }
+
+    .duel-status-title {
+      font-size: 11px;
+      font-weight: 900;
+      color: #9B51E0;
+      letter-spacing: 0.5px;
+    }
+
+    .duel-status-sub {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--navy-ink);
+      font-family: 'Baloo 2', sans-serif;
+    }
+
+    .memory-duel-arena {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .memory-player-board {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 24px;
+      padding: 12px 14px 16px;
+      border: 3.5px solid #FFFFFF;
+      box-shadow: 0 8px 0 #CBD5E1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .memory-player-board.p1 {
+      border-color: #FFD1D5;
+      box-shadow: 0 8px 0 #FFA8B0;
+    }
+    .memory-player-board.p2 {
+      border-color: #A7F3D0;
+      box-shadow: 0 8px 0 #6EE7B7;
+    }
+
+    .board-header {
+      font-size: 15px;
+      font-weight: 800;
+      font-family: 'Baloo 2', sans-serif;
+      margin-bottom: 10px;
+      padding: 4px 14px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .board-header.p1-header {
+      background: #FFE8EA;
+      color: var(--candy-coral);
+    }
+    .board-header.p2-header {
+      background: #E0FBFB;
+      color: #009E9F;
+    }
+
+    .memory-grid.duel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    .memory-grid.duel-grid .memory-card {
+      height: clamp(100px, 15vh, 135px);
+      min-height: 95px;
+    }
+
+    @media (max-width: 768px) {
+      .memory-duel-arena {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .memory-player-board {
+        width: 100%;
+        max-width: 450px;
+      }
+      .memory-duel-scoreboard {
+        flex-direction: row;
+        gap: 8px;
+      }
+      .memory-player-score-card {
+        padding: 6px 10px;
+      }
+      .duel-status-title {
+        font-size: 10px;
+      }
+      .duel-status-sub {
+        font-size: 12px;
+      }
     }
 
     /* Train Arena */
@@ -1994,80 +2411,253 @@
       font-weight: 800;
     }
 
-    /* Bingo Board */
-    .bingo-wrap {
+    /* ============================================================
+       TEPUK CERIA (2-PLAYER WHACK-A-TARGET ARENA)
+    ============================================================ */
+    .whack-arena {
       display: flex;
-      gap: clamp(12px, 2.5vw, 36px);
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      flex-wrap: nowrap;
       width: 100%;
-      max-width: 900px;
+      max-width: 1050px;
+      margin: 0 auto;
+      gap: 10px;
+      flex: 1;
+      justify-content: flex-start;
+      min-height: 0;
     }
 
-    .bingo-block {
-      text-align: center;
+    .whack-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 12px;
+    }
+
+    .whack-target-banner {
+      flex: 1;
+      max-width: 380px;
+      background: linear-gradient(135deg, #FFFFFF, #FFFBEB);
+      border: 3.5px solid #FFD13B;
+      box-shadow: 0 6px 0 #D47A00, 0 10px 20px rgba(255, 209, 59, 0.25);
+      border-radius: 24px;
+      padding: 6px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      animation: targetPulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes targetPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .whack-target-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #B45309;
+      font-family: 'Baloo 2', sans-serif;
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    .whack-target-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 2px solid #FCD34D;
+      border-radius: 16px;
+      padding: 2px 14px;
+      box-shadow: 0 2px 0 #F59E0B;
+    }
+
+    .whack-target-emoji {
+      font-size: clamp(24px, 3.2vw, 34px);
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .whack-target-emoji .num-badge,
+    .whack-target-emoji .letter-badge {
+      width: 34px !important;
+      height: 34px !important;
+      font-size: 20px !important;
+      border-width: 2.5px !important;
+      box-shadow: 0 2px 0 var(--badge-shadow, #FF8B93) !important;
+    }
+
+    .whack-target-name {
+      font-size: clamp(15px, 1.8vw, 20px);
+      font-weight: 900;
+      color: var(--navy-ink);
+      font-family: 'Baloo 2', sans-serif;
+      white-space: nowrap;
+    }
+
+    .whack-status-pill {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--navy-ink);
+      background: rgba(255, 255, 255, 0.95);
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 1px 10px;
+      box-shadow: 0 2px 0 #CBD5E1;
+      line-height: 1.2;
+    }
+
+    .whack-duel-boards {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .whack-player-area {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 28px;
+      padding: 10px 14px 14px;
+      border: 3.5px solid #FFFFFF;
+      box-shadow: 0 8px 0 #CBD5E1;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .bingo-owner {
-      font-family: 'Baloo 2', sans-serif;
-      font-weight: 800;
-      font-size: clamp(14px, 1.8vh, 18px);
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+    .whack-player-area.p1 {
+      border-color: #FFD1D5;
+      box-shadow: 0 8px 0 #FFA8B0;
     }
 
-    .bingo-board {
+    .whack-player-area.p2 {
+      border-color: #A7F3D0;
+      box-shadow: 0 8px 0 #6EE7B7;
+    }
+
+    .whack-holes-grid {
       display: grid;
-      grid-template-columns: repeat(3, clamp(42px, 5.5vh, 62px));
-      grid-template-rows: repeat(3, clamp(42px, 5.5vh, 62px));
-      gap: clamp(6px, 1vh, 10px);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: clamp(8px, 1.2vw, 14px);
+      width: 100%;
+      max-width: 380px;
+      margin: 4px auto 0;
     }
 
-    .bingo-cell {
-      border-radius: clamp(10px, 1.5vh, 18px);
+    .whack-hole {
+      height: clamp(88px, 13.5vh, 120px);
+      background: radial-gradient(ellipse at center, #64748B 0%, #334155 70%, #1E293B 100%);
+      border-radius: 24px;
+      border: 4px solid #E2E8F0;
+      box-shadow: inset 0 8px 12px rgba(0, 0, 0, 0.4), 0 5px 0 #CBD5E1;
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.15s ease;
+    }
+
+    .whack-hole:active {
+      transform: scale(0.96);
+    }
+
+    .whack-critter {
+      position: absolute;
+      inset: 6px;
+      background: #FFFFFF;
+      border-radius: 20px;
+      border: 3.5px solid #FFFFFF;
+      box-shadow: 0 6px 0 #CBD5E1, 0 8px 16px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 6px;
+      transform: translateY(110%);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events: auto;
+    }
+
+    .whack-critter.popped {
+      transform: translateY(0);
+    }
+
+    .whack-critter.hit-success {
+      background: linear-gradient(135deg, #A7F3D0, #34D399) !important;
+      border-color: #059669 !important;
+      transform: scale(1.12) rotate(4deg) !important;
+      box-shadow: 0 8px 0 #047857, 0 0 24px rgba(16, 185, 129, 0.5) !important;
+    }
+
+    .whack-critter-img {
+      font-size: clamp(34px, 4.5vw, 48px);
+      line-height: 1.1;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .whack-critter .num-badge,
+    .whack-critter .letter-badge {
+      width: clamp(40px, 5.2vw, 50px) !important;
+      height: clamp(40px, 5.2vw, 50px) !important;
+      font-size: clamp(26px, 3.6vw, 34px) !important;
+      border-width: 3px !important;
+      box-shadow: 0 3px 0 var(--badge-shadow, #FF8B93) !important;
+    }
+
+    .whack-critter-label {
       font-family: 'Baloo 2', sans-serif;
       font-weight: 800;
-      font-size: clamp(18px, 2.6vh, 26px);
+      font-size: clamp(12px, 1.3vw, 15px);
       color: var(--navy-ink);
-      position: relative;
-      background: #FFFFFF;
-      border: clamp(2px, 0.4vh, 3.5px) solid #FFFFFF;
-      box-shadow: 0 clamp(3px, 0.6vh, 5px) 0 #CBD5E1;
-      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      line-height: 1.1;
+      text-align: center;
+      max-width: 95%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none;
     }
 
-    .bingo-cell.marked {
-      background: var(--candy-teal);
-      color: #FFFFFF;
-      transform: scale(1.06) rotate(-3deg);
-      box-shadow: 0 5px 0 var(--teal-shadow), 0 8px 16px rgba(0, 210, 211, 0.3);
-      border-color: #FFFFFF;
-    }
-
-    .bingo-cell.marked::after {
-      content: '⭐';
-      position: absolute;
-      font-size: clamp(22px, 3.5vh, 36px);
-      animation: starPopIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    @keyframes starPopIn {
-      0% { transform: scale(0) rotate(-40deg); }
-      100% { transform: scale(1) rotate(0); }
-    }
-
-    .bingo-cell.marked span {
-      opacity: 0;
+    @media (max-width: 768px) {
+      .whack-top-bar {
+        flex-direction: row;
+        gap: 6px;
+      }
+      .whack-target-banner {
+        padding: 4px 8px;
+      }
+      .whack-duel-boards {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .whack-player-area {
+        width: 100%;
+        max-width: 420px;
+      }
+      .whack-holes-grid {
+        gap: 6px;
+      }
+      .whack-hole {
+        height: 85px;
+      }
     }
 
     /* Co-op Arena */
@@ -2630,9 +3220,21 @@
     }
 
     .story-char-avatar {
-      font-size: 56px;
+      width: clamp(56px, 7vw, 76px);
+      height: clamp(56px, 7vw, 76px);
       flex-shrink: 0;
-      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 6px 12px rgba(34, 139, 34, 0.28));
+      animation: mascotBreathe 3s ease-in-out infinite;
+    }
+
+    .story-char-avatar .mascot-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .story-char-speech {
@@ -3700,6 +4302,101 @@
       --btn-shadow: #94A3B8;
     }
 
+    /* Header Music Toggle Button & Audio Settings Styling */
+    .music-toggle-btn {
+      font-size: 20px;
+      position: relative;
+    }
+
+    .music-toggle-btn.playing {
+      background: linear-gradient(135deg, #FFFBEB 0%, #FEF08A 100%) !important;
+      border-color: #FF5E62 !important;
+      animation: musicPulse 1.8s ease-in-out infinite;
+    }
+
+    .music-toggle-btn.muted {
+      opacity: 0.75;
+      filter: grayscale(0.7);
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+    }
+
+    @keyframes musicPulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.08) rotate(-6deg); }
+      75% { transform: scale(1.08) rotate(6deg); }
+    }
+
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .audio-slider {
+      flex: 1;
+      accent-color: var(--candy-purple);
+      height: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .slider-val-badge {
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--candy-purple);
+      min-width: 40px;
+      text-align: right;
+    }
+
+    .voice-select-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      width: 100%;
+    }
+
+    .voice-btn {
+      padding: 8px 6px;
+      text-align: center;
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 800;
+      font-size: 12.5px;
+      cursor: pointer;
+      border-radius: 14px;
+      color: var(--navy-ink);
+      background: #F8FAFC;
+      border: 2px solid #E2E8F0;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .voice-btn img, .voice-huki-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      border-radius: 50%;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.18));
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .voice-btn:hover img, .voice-btn.active img {
+      transform: scale(1.18);
+    }
+
+    .voice-btn.active {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F5F3FF 100%);
+      border-color: var(--candy-purple);
+      color: var(--candy-purple);
+      box-shadow: 0 4px 0 var(--purple-shadow);
+      transform: translateY(-2px);
+    }
+
     /* Sticker Modal */
     .stickers-modal-card {
       max-width: 880px;
@@ -3789,6 +4486,665 @@
       color: #FFFFFF;
     }
 
+    /* ===== COIN PILL & PLAYGROUND STYLES ===== */
+    .pill-btn.coin-pill {
+      background: #FFFFFF;
+      color: #78350F;
+      border: 3.5px solid #F59E0B;
+      --btn-shadow: #D97706;
+      font-size: 20px;
+      font-weight: 900;
+      gap: 10px;
+      padding: 0 20px;
+      height: 48px;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #D97706, 0 8px 16px rgba(245, 158, 11, 0.2);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .pill-btn.coin-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 0 #D97706, 0 12px 20px rgba(245, 158, 11, 0.28);
+    }
+
+    .pill-btn.coin-pill .coin-icon {
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      animation: coinWiggle 3.5s infinite ease-in-out;
+    }
+
+    .pill-btn.coin-pill .coin-icon svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: drop-shadow(0 2px 4px rgba(217, 119, 6, 0.5));
+    }
+
+    @keyframes coinWiggle {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(8deg) scale(1.12); }
+    }
+
+    .pill-btn.playground-pill {
+      background: linear-gradient(135deg, #DCFCE7, #86EFAC);
+      color: #14532D;
+      border-color: #4ADE80;
+      --btn-shadow: #16A34A;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .flying-coin-particle {
+      position: fixed;
+      z-index: 9999;
+      font-size: 26px;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 8px rgba(245, 158, 11, 0.45));
+      animation: flyCoinAnim 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes flyCoinAnim {
+      0% { transform: scale(0.6) translate(0, 0); opacity: 1; }
+      40% { transform: scale(1.4) translate(-20px, -40px); opacity: 1; }
+      100% { transform: scale(0.8) translate(var(--dest-x, 0), var(--dest-y, 0)); opacity: 0; }
+    }
+
+    /* Playground Modal */
+    .playground-modal-card {
+      max-width: 980px;
+      width: 95%;
+      max-height: 90vh;
+      overflow-y: auto;
+      gap: 12px;
+      padding: 20px 24px;
+      border-radius: 36px;
+      background: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 25%, #FEF9C3 60%, #DCFCE7 100%);
+      border: 5px solid #FFFFFF;
+      box-shadow: 0 16px 0 #CBD5E1, 0 24px 40px rgba(0, 0, 0, 0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .playground-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .playground-title-box {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .playground-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-weight: 900;
+      color: var(--navy-ink);
+      line-height: 1.1;
+    }
+
+    .playground-sub {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0369A1;
+    }
+
+    /* ============================================================
+       PLAYGROUND FULL SCREEN & PANORAMIC THEME PARK MAP
+    ============================================================ */
+    #playground-screen {
+      position: absolute;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background: linear-gradient(180deg, #BAE6FD 0%, #E0F2FE 45%, #FDF4E3 100%);
+      overflow: hidden;
+      z-index: 10;
+      padding: 10px 14px 14px 14px;
+      box-sizing: border-box;
+    }
+
+    #playground-screen.active {
+      display: flex;
+      animation: fadeInScreen 0.35s ease;
+    }
+
+    .playground-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 0 10px 0;
+      gap: 12px;
+      background: transparent;
+      backdrop-filter: none;
+      border: none;
+      box-shadow: none;
+      z-index: 20;
+      flex-shrink: 0;
+      width: 100%;
+      box-sizing: border-box;
+      transition: max-width 0.15s ease;
+    }
+
+    .playground-back-pill {
+      background: #FFFFFF;
+      border: 2.5px solid #CBD5E1;
+      box-shadow: 0 4px 0 #94A3B8;
+      color: var(--navy-ink);
+      padding: 8px 20px;
+      font-size: 15px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .playground-back-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #94A3B8;
+      border-color: #94A3B8;
+    }
+
+    .playground-screen-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+    }
+
+    .playground-title-icon {
+      font-size: clamp(40px, 4.5vw, 56px);
+      line-height: 1;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.18));
+      animation: iconSpinFloat 5s infinite ease-in-out alternate;
+    }
+
+    @keyframes iconSpinFloat {
+      0% { transform: translateY(0) rotate(0deg) scale(1); }
+      100% { transform: translateY(-4px) rotate(10deg) scale(1.08); }
+    }
+
+    .playground-title-main {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(24px, 3.2vw, 38px);
+      font-weight: 900;
+      color: #0369A1;
+      line-height: 1.1;
+      text-shadow: 0 2px 0 #FFFFFF, 0 4px 12px rgba(255, 255, 255, 0.95);
+      letter-spacing: -0.3px;
+    }
+
+    .playground-title-sub {
+      font-size: clamp(13.5px, 1.55vw, 18px);
+      font-weight: 800;
+      color: #0284C7;
+      line-height: 1.25;
+      text-shadow: 0 1px 0 #FFFFFF, 0 2px 8px rgba(255, 255, 255, 0.9);
+      margin-top: 2px;
+    }
+
+    .playground-topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .shop-toggle-pill {
+      background: linear-gradient(135deg, #FF6584, #FF5E62);
+      border: 2.5px solid #FFFFFF;
+      box-shadow: 0 4px 0 #D93B3F, 0 6px 16px rgba(255, 94, 98, 0.35);
+      color: #FFFFFF;
+      padding: 8px 22px;
+      font-size: 15px;
+      font-weight: 800;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .shop-toggle-pill:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 0 #D93B3F, 0 8px 20px rgba(255, 94, 98, 0.45);
+    }
+
+    /* Main Viewport for Scenic Park */
+    .playground-viewport-wrapper {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0 4px 6px 4px;
+      box-sizing: border-box;
+    }
+
+    .playground-map-container {
+      position: relative;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      aspect-ratio: 1024 / 682;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22), 0 0 0 6px rgba(255, 255, 255, 0.95);
+      background: #86EFAC;
+      user-select: none;
+    }
+
+    .playground-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      display: block;
+      pointer-events: none;
+    }
+
+    .playground-map-spots {
+      position: absolute;
+      inset: 0;
+      pointer-events: auto;
+    }
+
+    /* Individual Wahana Map Spots */
+    .playground-spot {
+      position: absolute;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Locked Spot */
+    .playground-spot.locked {
+      border-radius: 20px;
+    }
+
+    .playground-spot.locked:hover {
+      transform: scale(1.06);
+    }
+
+    .playground-spot.locked .spot-lock-badge {
+      position: absolute;
+      bottom: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.88);
+      color: #FFD13B;
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(10px, 1.2vw, 13px);
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1.5px solid #FFD13B;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.9;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+
+    .playground-spot.locked:hover .spot-lock-badge {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.12);
+      background: rgba(15, 23, 42, 0.96);
+      box-shadow: 0 6px 16px rgba(255, 209, 59, 0.55);
+    }
+
+    .playground-spot-siluet {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+      opacity: 0.92;
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .playground-spot.locked:hover .playground-spot-siluet {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 12px rgba(255, 209, 59, 0.65));
+    }
+
+    /* Unlocked / Installed Spot */
+    .playground-spot.unlocked {
+      transform-origin: center bottom;
+    }
+
+    .playground-spot.unlocked:hover {
+      transform: translateY(-5px) scale(1.05);
+      filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.25));
+    }
+
+    .playground-spot.unlocked:active {
+      transform: scale(0.94);
+    }
+
+    .playground-spot-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.18));
+      transition: transform 0.25s ease;
+    }
+
+    .playground-spot.unlocked .playground-spot-img {
+      animation: spotIdleBob 4.5s infinite ease-in-out alternate;
+    }
+
+    @keyframes spotIdleBob {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-4px); }
+    }
+
+    .playground-spot.bouncing {
+      animation: spotJoyBounce 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    }
+
+    @keyframes spotJoyBounce {
+      0% { transform: scale(1); }
+      30% { transform: scale(1.22) translateY(-14px); }
+      60% { transform: scale(0.92) translateY(3px); }
+      80% { transform: scale(1.08) translateY(-4px); }
+      100% { transform: scale(1) translateY(0); }
+    }
+
+    /* Floating Toko Wahana Drawer */
+    .wahana-drawer-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 30;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .wahana-drawer-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .wahana-drawer-panel {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-height: 80vh;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(18px);
+      border-top: 4px solid #FFFFFF;
+      border-radius: 32px 32px 0 0;
+      box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.18);
+      z-index: 35;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.34, 1.3, 0.64, 1);
+      overflow: hidden;
+    }
+
+    .wahana-drawer-panel.active {
+      transform: translateY(0);
+    }
+
+    .wahana-drawer-header {
+      padding: 12px 20px 8px 20px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 2px solid #F1F5F9;
+      flex-shrink: 0;
+    }
+
+    .wahana-drawer-handle {
+      width: 44px;
+      height: 5px;
+      background: #CBD5E1;
+      border-radius: 999px;
+      margin: 0 auto 10px auto;
+      cursor: pointer;
+    }
+
+    .wahana-drawer-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .wahana-drawer-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(17px, 2.2vw, 22px);
+      font-weight: 900;
+      color: var(--navy-ink);
+    }
+
+    .wahana-drawer-sub {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy-light);
+      margin-top: 2px;
+    }
+
+    .wahana-drawer-grid {
+      padding: 16px 20px 24px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      overflow-y: auto;
+      max-height: calc(80vh - 100px);
+    }
+
+    /* Wahana Card in Drawer */
+    .wahana-card {
+      background: #FFFFFF;
+      border: 3px solid #E2E8F0;
+      border-radius: 22px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 0 #E2E8F0;
+      transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .wahana-card:hover {
+      transform: translateY(-3px);
+      border-color: #BAE6FD;
+      box-shadow: 0 7px 0 #BAE6FD, 0 10px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .wahana-card.unlocked {
+      background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
+      border-color: #86EFAC;
+      box-shadow: 0 4px 0 #86EFAC;
+    }
+
+    .wahana-card-thumb {
+      width: 68px;
+      height: 68px;
+      flex-shrink: 0;
+      background: radial-gradient(circle, #FFFFFF 60%, rgba(240, 249, 255, 0.8) 100%);
+      border-radius: 16px;
+      padding: 4px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .wahana-card-thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+    }
+
+    .wahana-card-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      text-align: left;
+    }
+
+    .wahana-card-name {
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 800;
+      font-size: 13.5px;
+      color: var(--navy-ink);
+      line-height: 1.15;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .wahana-card-desc {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy-light);
+      line-height: 1.25;
+      margin: 3px 0 6px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .wahana-buy-btn {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      align-self: flex-start;
+      box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+      transition: transform 0.15s ease;
+    }
+
+    .wahana-buy-btn.can-afford {
+      background: linear-gradient(135deg, #FEF08A, #F59E0B);
+      color: #78350F;
+      box-shadow: 0 3px 0 #D97706;
+    }
+
+    .wahana-buy-btn.can-afford:hover {
+      transform: scale(1.06);
+    }
+
+    .wahana-buy-btn.installed {
+      background: #10B981;
+      color: #FFFFFF;
+      box-shadow: 0 3px 0 #059669;
+      cursor: default;
+    }
+
+    .wahana-buy-btn.cant-afford {
+      background: #E2E8F0;
+      color: #94A3B8;
+      box-shadow: 0 3px 0 #CBD5E1;
+      cursor: not-allowed;
+    }
+
+    /* Quick Detail / Buy Modal */
+    .wahana-detail-card {
+      max-width: 380px;
+      text-align: center;
+      padding: 24px 20px;
+    }
+
+    .wahana-detail-img-wrap {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 12px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, rgba(254, 240, 138, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+    }
+
+    .wahana-detail-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+      animation: detailFloat 3s infinite ease-in-out alternate;
+    }
+
+    @keyframes detailFloat {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
+
+    .wahana-detail-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--navy-ink);
+      margin-bottom: 6px;
+    }
+
+    .wahana-detail-desc {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy-light);
+      margin-bottom: 18px;
+    }
+
+    .wahana-detail-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .playground-topbar {
+        padding: 2px 0 6px 0;
+      }
+      .playground-title-sub {
+        display: none;
+      }
+      .wahana-drawer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 1024px) {
       .game-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -3797,10 +5153,12 @@
       #menu-screen, #topic-screen, #game-screen { padding: 10px 14px 18px; }
       .game-grid { grid-template-columns: 1fr; gap: 10px; }
       .players-row { flex-direction: column; }
-      .bingo-board { grid-template-columns: repeat(3, 52px); grid-template-rows: repeat(3, 52px); }
+      .whack-holes-grid { gap: 8px; max-width: 320px; }
       .avatar-picker-wrap { flex-direction: column; align-items: center; }
       .mascot-guide-hero, .topic-header-banner { flex-direction: column; text-align: center; align-items: center; }
       .hero-speech-content { align-items: center; }
+      .memory-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 8px; }
+      .memory-card { height: clamp(95px, 14vh, 120px); min-height: 90px; }
     }
   </style>
 </head>
@@ -3882,11 +5240,24 @@
           <span class="app-title-sm">Taman Pintar</span>
         </div>
         <div class="app-bar-actions">
+          <div class="pill-btn coin-pill jelly-btn" id="btn-coins-topic" title="Koin Bintang Emas">
+            <span class="coin-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+                <circle cx="18" cy="18" r="12" fill="#FDE047" stroke="#D97706" stroke-width="1.5"/>
+                <path d="M18 9L20.5 14.5L26.5 15.2L22 19.3L23.2 25.2L18 22.2L12.8 25.2L14 19.3L9.5 15.2L15.5 14.5L18 9Z" fill="#FFFDF0" stroke="#B45309" stroke-width="1.2" stroke-linejoin="round"/>
+                <circle cx="13" cy="12" r="2.2" fill="#FFFFFF" opacity="0.85"/>
+              </svg>
+            </span>
+            <span id="coin-badge-val-topic">10</span>
+          </div>
+          <div class="pill-btn playground-pill jelly-btn" id="btn-open-playground-topic" title="Buka Taman Bermain Huki">
+            🎡 Taman Huki
+          </div>
           <div class="pill-btn stickers-pill jelly-btn" id="btn-open-stickers-topic" title="Buka Album Stiker">
             📖 Stiker <span id="sticker-badge-val-topic">1/12</span>
           </div>
-          <div class="pill-btn jelly-btn" id="trophy-count-topic">🏆 0</div>
-          <div class="icon-btn jelly-btn" id="btn-settings-topic">⚙️</div>
+          <div class="icon-btn jelly-btn" id="btn-settings-topic" title="Pengaturan">⚙️</div>
         </div>
       </div>
 
@@ -3919,11 +5290,24 @@
           <span class="app-title-sm" id="menu-topic-title">Taman Pintar</span>
         </div>
         <div class="app-bar-actions">
+          <div class="pill-btn coin-pill jelly-btn" id="btn-coins-menu" title="Koin Bintang Emas">
+            <span class="coin-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+                <circle cx="18" cy="18" r="12" fill="#FDE047" stroke="#D97706" stroke-width="1.5"/>
+                <path d="M18 9L20.5 14.5L26.5 15.2L22 19.3L23.2 25.2L18 22.2L12.8 25.2L14 19.3L9.5 15.2L15.5 14.5L18 9Z" fill="#FFFDF0" stroke="#B45309" stroke-width="1.2" stroke-linejoin="round"/>
+                <circle cx="13" cy="12" r="2.2" fill="#FFFFFF" opacity="0.85"/>
+              </svg>
+            </span>
+            <span id="coin-badge-val">10</span>
+          </div>
+          <div class="pill-btn playground-pill jelly-btn" id="btn-open-playground" title="Buka Taman Bermain Huki">
+            🎡 Taman Huki
+          </div>
           <div class="pill-btn stickers-pill jelly-btn" id="btn-open-stickers" title="Buka Album Stiker">
             📖 Stiker <span id="sticker-badge-val">1/12</span>
           </div>
-          <div class="pill-btn jelly-btn" id="trophy-count">🏆 0</div>
-          <div class="icon-btn jelly-btn" id="btn-settings">⚙️</div>
+          <div class="icon-btn jelly-btn" id="btn-settings" title="Pengaturan">⚙️</div>
         </div>
       </div>
 
@@ -4003,7 +5387,9 @@
           <div class="theme-label" id="theme-label"></div>
           <span class="concept-pill" id="concept-pill"></span>
         </div>
-        <div style="width:44px;"></div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div class="icon-btn jelly-btn" id="btn-settings-game" title="Pengaturan">⚙️</div>
+        </div>
       </div>
 
       <!-- Mascot Cheerleader with Audio Tap -->
@@ -4063,22 +5449,125 @@
       </div>
     </div>
 
+    <!-- 8.5 PLAYGROUND FULL SCREEN & THEME PARK STAGE -->
+    <div id="playground-screen" class="screen">
+      <!-- Top Navigation & Control Bar -->
+      <div class="playground-topbar">
+        <button class="playground-back-pill jelly-btn" id="btn-back-from-playground" title="Kembali ke Menu">
+          <span>⬅️</span> Kembali
+        </button>
+        <div class="playground-screen-title">
+          <span class="playground-title-icon">🎡</span>
+          <div class="playground-title-text">
+            <div class="playground-title-main">Taman Bermain Si Huki</div>
+            <div class="playground-title-sub">Pasang wahana seru dari koin belajarmu! Sentuh wahana untuk bermain! ✨</div>
+          </div>
+        </div>
+        <div class="playground-topbar-right">
+          <div class="pill-btn coin-pill jelly-btn" id="btn-coins-playground" title="Koin Bintang Emas">
+            <span class="coin-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+                <circle cx="18" cy="18" r="12" fill="#FDE047" stroke="#D97706" stroke-width="1.5"/>
+                <path d="M18 9L20.5 14.5L26.5 15.2L22 19.3L23.2 25.2L18 22.2L12.8 25.2L14 19.3L9.5 15.2L15.5 14.5L18 9Z" fill="#FFFDF0" stroke="#B45309" stroke-width="1.2" stroke-linejoin="round"/>
+                <circle cx="13" cy="12" r="2.2" fill="#FFFFFF" opacity="0.85"/>
+              </svg>
+            </span>
+            <span id="coin-badge-val-playground">10</span>
+          </div>
+          <button class="shop-toggle-pill jelly-btn" id="btn-toggle-shop-drawer" title="Buka Toko Wahana">
+            <span>🛒</span> Toko Wahana
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Panoramic Park Canvas / Viewport -->
+      <div class="playground-viewport-wrapper">
+        <div class="playground-map-container" id="playground-map-container">
+          <img src="assets/playground/taman_huki_bg.jpg" class="playground-bg-img" alt="Peta Taman Si Huki">
+          
+          <!-- 8 Map Spot Overlays -->
+          <div class="playground-map-spots" id="playground-map-spots"></div>
+        </div>
+      </div>
+
+      <!-- Floating Toko Wahana Drawer / Bottom Sheet -->
+      <div class="wahana-drawer-backdrop" id="wahana-drawer-backdrop"></div>
+      <div class="wahana-drawer-panel" id="wahana-drawer-panel">
+        <div class="wahana-drawer-header">
+          <div class="wahana-drawer-handle" id="wahana-drawer-handle"></div>
+          <div class="wahana-drawer-title-row">
+            <div class="wahana-drawer-title">🛒 Toko Wahana & Dekorasi Taman Ceria</div>
+            <button class="icon-btn jelly-btn close-drawer-btn" id="btn-close-shop-drawer" title="Tutup Toko" style="width:34px; height:34px; font-size:15px;">✕</button>
+          </div>
+          <div class="wahana-drawer-sub">Kumpulkan koin bintang dengan belajar & bermain, lalu buka wahana impianmu! ⭐</div>
+        </div>
+        <div class="wahana-drawer-grid" id="wahana-drawer-grid"></div>
+      </div>
+
+      <!-- Quick Buy / Item Detail Popup Modal -->
+      <div class="modal-backdrop" id="wahana-detail-modal">
+        <div class="modal-card wahana-detail-card" id="wahana-detail-card-content"></div>
+      </div>
+    </div>
+
     <!-- 9. SETTINGS MODAL -->
     <div class="modal-backdrop" id="settings-modal">
       <div class="modal-card">
-        <div class="modal-title">⚙️ Pengaturan</div>
+        <div class="modal-title">⚙️ Pengaturan Suara & Belajar</div>
+        
+        <!-- BGM Toggle & Slider -->
         <div class="setting-row">
+          <span class="setting-label">🎵 Musik Ceria (BGM)</span>
+          <div class="toggle on" id="toggle-bgm">
+            <div class="knob"></div>
+          </div>
+        </div>
+        <div class="slider-row">
+          <span style="font-size:12px; font-weight:800; color:var(--navy-light);">Volume Musik</span>
+          <input type="range" min="0" max="100" value="70" class="audio-slider" id="slider-bgm-vol">
+          <span class="slider-val-badge" id="val-bgm-vol">70%</span>
+        </div>
+
+        <!-- SFX Toggle & Slider -->
+        <div class="setting-row" style="margin-top:2px;">
           <span class="setting-label">🔊 Efek Suara (SFX)</span>
           <div class="toggle on" id="toggle-sound">
             <div class="knob"></div>
           </div>
         </div>
-        <div class="setting-row">
-          <span class="setting-label">🗣️ Narasi Suara Otomatis</span>
+        <div class="slider-row">
+          <span style="font-size:12px; font-weight:800; color:var(--navy-light);">Volume Efek</span>
+          <input type="range" min="0" max="100" value="85" class="audio-slider" id="slider-sfx-vol">
+          <span class="slider-val-badge" id="val-sfx-vol">85%</span>
+        </div>
+
+        <!-- Voice Toggle & Profiles -->
+        <div class="setting-row" style="margin-top:2px;">
+          <span class="setting-label">🗣️ Narasi Suara Panduan</span>
           <div class="toggle on" id="toggle-voice">
             <div class="knob"></div>
           </div>
         </div>
+        <div class="setting-row" style="flex-direction:column;align-items:stretch;gap:6px;">
+          <span class="setting-label" style="font-size:13px;">🎙️ Karakter Pemandu Suara</span>
+          <div class="voice-select-group">
+            <div class="voice-btn active" data-vprofile="huki">
+              <img src="assets/mascot/default.jpg" alt="Si Huki" class="voice-huki-icon">
+              <span>Si Huki Ceria</span>
+            </div>
+            <div class="voice-btn" data-vprofile="bunda">
+              <span style="font-size:22px; line-height:1.2;">👩‍🏫</span>
+              <span>Bunda Ramah</span>
+            </div>
+            <div class="voice-btn" data-vprofile="sahabat">
+              <span style="font-size:22px; line-height:1.2;">👦</span>
+              <span>Sahabat Cilik</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Difficulty -->
         <div class="setting-row" style="flex-direction:column;align-items:stretch;gap:6px;">
           <span class="setting-label">🎚️ Tingkat Kesulitan</span>
           <div class="seg-group">
@@ -4086,7 +5575,8 @@
             <div class="seg-btn" data-diff="normal">🔥 Normal (SD)</div>
           </div>
         </div>
-        <button class="action-btn secondary modal-close jelly-btn" id="btn-close-settings">Tutup</button>
+        
+        <button class="action-btn secondary modal-close jelly-btn" id="btn-close-settings">Simpan & Tutup</button>
       </div>
     </div>
 
@@ -4147,90 +5637,88 @@
     requestAnimationFrame(drawStars);
 
     /* ============================================================
-       SVG OWL MASCOT "SI HUKI" (NEUTRAL, CUTE, & EXPRESSIVE)
+       PNG OWL MASCOT "SI HUKI" — MULTI POSE SYSTEM
+       Poses: default | wave | thumbsup | reading | celebrate | thinking | love
     ============================================================ */
-    function getOwlMascotSVG(extraClass = '') {
-      return `
-      <svg class="mascot-svg ${extraClass}" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="owlBodyGrad" cx="50%" cy="40%" r="60%">
-            <stop offset="0%" stop-color="#C084FC" />
-            <stop offset="50%" stop-color="#9333EA" />
-            <stop offset="100%" stop-color="#6B21A8" />
-          </radialGradient>
-          <radialGradient id="owlBellyGrad" cx="50%" cy="45%" r="55%">
-            <stop offset="0%" stop-color="#FFFBEB" />
-            <stop offset="60%" stop-color="#FEF08A" />
-            <stop offset="100%" stop-color="#FDE047" />
-          </radialGradient>
-          <filter id="owlGlow">
-            <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#581C87" flood-opacity="0.3" />
-          </filter>
-        </defs>
-        <!-- Ear Tufts -->
-        <path d="M26 34 L18 10 L40 22 Z" fill="#7E22CE" stroke="#581C87" stroke-width="2" />
-        <path d="M74 34 L82 10 L60 22 Z" fill="#7E22CE" stroke="#581C87" stroke-width="2" />
-        <path d="M26 30 L22 16 L35 24 Z" fill="#FFD13B" />
-        <path d="M74 30 L78 16 L65 24 Z" fill="#FFD13B" />
+    const HUKI_POSES = {
+      default:   'assets/mascot/default.jpg',
+      wave:      'assets/mascot/wave.jpg',
+      thumbsup:  'assets/mascot/thumbsup.jpg',
+      reading:   'assets/mascot/reading.jpg',
+      celebrate: 'assets/mascot/celebrate.jpg',
+      thinking:  'assets/mascot/thinking.jpg',
+      love:      'assets/mascot/love.jpg'
+    };
 
-        <!-- Body -->
-        <ellipse cx="50" cy="54" rx="38" ry="40" fill="url(#owlBodyGrad)" stroke="#581C87" stroke-width="3" filter="url(#owlGlow)" />
+    /* ---- Canvas-based white background remover via fetch+blob ---- */
+    const _bgRemovedCache = {};
 
-        <!-- Belly -->
-        <ellipse cx="50" cy="62" rx="25" ry="26" fill="url(#owlBellyGrad)" stroke="#F59E0B" stroke-width="2" />
-        <!-- Belly Feather Marks -->
-        <path d="M42 56 Q50 62 58 56" fill="none" stroke="#D97706" stroke-width="2.2" stroke-linecap="round" />
-        <path d="M38 65 Q50 72 62 65" fill="none" stroke="#D97706" stroke-width="2.2" stroke-linecap="round" />
-        <path d="M44 74 Q50 79 56 74" fill="none" stroke="#D97706" stroke-width="2.2" stroke-linecap="round" />
+    function removeBgFromImg(img) {
+      const originalSrc = img.getAttribute('data-src') || img.src;
+      if (_bgRemovedCache[originalSrc]) {
+        img.src = _bgRemovedCache[originalSrc];
+        return;
+      }
+      if (img.dataset.bgRemoved) return;
+      img.dataset.bgRemoved = '1';
 
-        <!-- Wings -->
-        <path d="M14 50 Q10 68 24 74 Q22 58 18 48 Z" fill="#7E22CE" stroke="#581C87" stroke-width="2" />
-        <path d="M86 50 Q90 68 76 74 Q78 58 82 48 Z" fill="#7E22CE" stroke="#581C87" stroke-width="2" />
+      fetch(originalSrc)
+        .then(r => r.blob())
+        .then(blob => createImageBitmap(blob))
+        .then(bitmap => {
+          const canvas = document.createElement('canvas');
+          canvas.width  = bitmap.width;
+          canvas.height = bitmap.height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(bitmap, 0, 0);
+          const data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const d = data.data;
+          // If the image already has transparent background, preserve it as-is without altering white details
+          if (d[3] === 0) {
+            return;
+          }
+          const threshold = 235;
+          for (let i = 0; i < d.length; i += 4) {
+            if (d[i] >= threshold && d[i+1] >= threshold && d[i+2] >= threshold) {
+              const whiteness = Math.min(d[i], d[i+1], d[i+2]);
+              const alpha = Math.round(((255 - whiteness) / (255 - threshold)) * 255);
+              d[i+3] = Math.min(d[i+3], alpha);
+            }
+          }
+          ctx.putImageData(data, 0, 0);
+          const dataUrl = canvas.toDataURL('image/png');
+          _bgRemovedCache[originalSrc] = dataUrl;
+          // Update all mascot imgs with the same src
+          document.querySelectorAll(`.mascot-img[data-src="${originalSrc}"]`).forEach(el => {
+            el.src = dataUrl;
+          });
+          img.src = dataUrl;
+        })
+        .catch(() => { /* silently ignore if fetch fails */ });
+    }
 
-        <!-- Eye Rings (Big Wise Owl Eyes) -->
-        <circle cx="34" cy="40" r="16" fill="#FFFFFF" stroke="#581C87" stroke-width="2.8" />
-        <circle cx="66" cy="40" r="16" fill="#FFFFFF" stroke="#581C87" stroke-width="2.8" />
-
-        <!-- Eyes Animated -->
-        <g class="mascot-eye">
-          <ellipse cx="35" cy="41" rx="8.5" ry="9" fill="#1E293B" />
-          <circle cx="32" cy="38" r="3.2" fill="#FFFFFF" />
-          <circle cx="38" cy="44" r="1.5" fill="#FFFFFF" />
-        </g>
-        <g class="mascot-eye">
-          <ellipse cx="65" cy="41" rx="8.5" ry="9" fill="#1E293B" />
-          <circle cx="62" cy="38" r="3.2" fill="#FFFFFF" />
-          <circle cx="68" cy="44" r="1.5" fill="#FFFFFF" />
-        </g>
-
-        <!-- Beak -->
-        <path d="M44 44 Q50 42 56 44 L50 56 Z" fill="#FF9900" stroke="#D47A00" stroke-width="2.2" stroke-linejoin="round" />
-
-        <!-- Cute Cheeks -->
-        <ellipse cx="22" cy="48" rx="5.5" ry="4" fill="#FF6584" opacity="0.65" />
-        <ellipse cx="78" cy="48" rx="5.5" ry="4" fill="#FF6584" opacity="0.65" />
-
-        <!-- Feet -->
-        <ellipse cx="40" cy="92" rx="7" ry="4" fill="#FF9900" stroke="#D47A00" stroke-width="1.8" />
-        <ellipse cx="60" cy="92" rx="7" ry="4" fill="#FF9900" stroke="#D47A00" stroke-width="1.8" />
-      </svg>`;
+    function getOwlMascotSVG(extraClass = '', pose = 'default') {
+      // Returns an <img> tag with the new mascot PNG
+      const src = HUKI_POSES[pose] || HUKI_POSES.default;
+      return `<img class="mascot-img ${extraClass}" src="${src}" data-src="${src}" alt="Si Huki" draggable="false" onload="removeBgFromImg(this)">`;
     }
 
     function renderMascots() {
-      const slots = [
-        'splash-mascot-box',
-        'brand-mascot-box-1',
-        'topic-hero-huki',
-        'btn-hero-mascot',
-        'countdown-mascot-box',
-        'game-mascot',
-        'win-mascot-box'
+      // Each slot gets its own contextually appropriate pose
+      const slotPoses = [
+        { id: 'splash-mascot-box',    pose: 'wave'      },
+        { id: 'brand-mascot-box-1',   pose: 'default'   },
+        { id: 'topic-hero-huki',      pose: 'reading'   },
+        { id: 'btn-hero-mascot',      pose: 'thumbsup'  },
+        { id: 'countdown-mascot-box', pose: 'thinking'  },
+        { id: 'game-mascot',          pose: 'love'      },
+        { id: 'win-mascot-box',       pose: 'celebrate' }
       ];
-      slots.forEach(id => {
+      slotPoses.forEach(({ id, pose }) => {
         const el = document.getElementById(id);
         if (el) {
           const hint = el.querySelector('.hero-tap-hint');
-          el.innerHTML = getOwlMascotSVG();
+          el.innerHTML = getOwlMascotSVG('', pose);
           if (hint) el.appendChild(hint);
         }
       });
@@ -4256,10 +5744,113 @@
     let unlockedStickers = ['stk_owl'];
 
     /* ============================================================
+       TAMAN BERMAIN SI HUKI (WAHANA ITEMS & ECONOMY)
+    ============================================================ */
+    const WAHANA_ITEMS = [
+      {
+        id: 'wahana_flowers',
+        name: 'Kebun Bunga Pelangi',
+        image: 'assets/playground/wahana_flowers.png',
+        siluet: 'assets/playground/siluet_flowers.png',
+        icon: '🌸',
+        desc: 'Bunga warna-warni mekar harum berpagar putih ceria',
+        cost: 5,
+        spot: { left: 2.5, top: 56.0, width: 23.5, height: 20.5 },
+        interactSpeech: 'Wah! Bunga pelangi mekar harum sekali! 🌸✨'
+      },
+      {
+        id: 'wahana_candy_tree',
+        name: 'Pohon Permen Ceria',
+        image: 'assets/playground/wahana_candy_tree.png',
+        siluet: 'assets/playground/siluet_candy_tree.png',
+        icon: '🍭',
+        desc: 'Pohon permen lolipop manis penuh kejutan warna',
+        cost: 10,
+        spot: { left: 20.5, top: 32.0, width: 14.5, height: 28.0 },
+        interactSpeech: 'Nyam! Pohon permen manis penuh kejutan ceria! 🍭✨'
+      },
+      {
+        id: 'wahana_swing',
+        name: 'Ayunan Pelangi Huki',
+        image: 'assets/playground/wahana_swing.png',
+        siluet: 'assets/playground/siluet_swing.png',
+        icon: '🌈',
+        desc: 'Ayunan lembut dengan lengkungan pelangi indah',
+        cost: 15,
+        spot: { left: 6.8, top: 34.5, width: 16.8, height: 20.5 },
+        interactSpeech: 'Yuhu! Berayun tinggi melintasi pelangi ceria! 🌈✨'
+      },
+      {
+        id: 'wahana_slide',
+        name: 'Perosotan Es Krim',
+        image: 'assets/playground/wahana_slide.png',
+        siluet: 'assets/playground/siluet_slide.png',
+        icon: '🍦',
+        desc: 'Perosotan es krim tumpuk aneka rasa buah segar',
+        cost: 20,
+        spot: { left: 31.8, top: 19.0, width: 18.5, height: 36.0 },
+        interactSpeech: 'Wusss! Meluncur seru di perosotan es krim lezat! 🍦✨'
+      },
+      {
+        id: 'wahana_balloon',
+        name: 'Balon Udara Ajaib',
+        image: 'assets/playground/wahana_balloon.png',
+        siluet: 'assets/playground/siluet_balloon.png',
+        icon: '🎈',
+        desc: 'Balon udara terbang di langit taman bersama Si Huki',
+        cost: 25,
+        spot: { left: 48.3, top: 6.5, width: 13.2, height: 27.8 },
+        interactSpeech: 'Keren! Kita terbang melihat pemandangan indah dari atas awan! 🎈✨'
+      },
+      {
+        id: 'wahana_pond',
+        name: 'Kolam Ikan Emas',
+        image: 'assets/playground/wahana_pond.png',
+        siluet: 'assets/playground/siluet_pond.png',
+        icon: '🐟',
+        desc: 'Kolam jernih dengan jembatan, air terjun & ikan melompat',
+        cost: 25,
+        spot: { left: 64.5, top: 56.5, width: 26.8, height: 23.5 },
+        interactSpeech: 'Kecipak-kecipuk! Ikan emas melompat riang di kolam jernih! 🐟✨'
+      },
+      {
+        id: 'wahana_carousel',
+        name: 'Komidi Putar Cilik',
+        image: 'assets/playground/wahana_carousel.png',
+        siluet: 'assets/playground/siluet_carousel.png',
+        icon: '🎠',
+        desc: 'Komidi putar kuda berputar riang dengan lampu warna-warni',
+        cost: 30,
+        spot: { left: 60.0, top: 22.8, width: 18.5, height: 35.0 },
+        interactSpeech: 'Tra-la-la! Asyiknya berputar di komidi putar ceria! 🎠✨'
+      },
+      {
+        id: 'wahana_castle',
+        name: 'Kastil Awan Juara',
+        image: 'assets/playground/wahana_castle.png',
+        siluet: 'assets/playground/siluet_castle.png',
+        icon: '🏰',
+        desc: 'Kastil megah di atas awan untuk sahabat cilik juara',
+        cost: 35,
+        spot: { left: 77.0, top: 16.0, width: 21.0, height: 36.5 },
+        interactSpeech: 'Megah sekali! Kastil awan tempat sahabat juara berkumpul! 🏰👑✨'
+      }
+    ];
+    let coinCount = 10;
+    let unlockedWahana = [];
+
+    /* ============================================================
        SETTINGS, STATE & STORAGE
     ============================================================ */
-    let settings = { sound: true, voice: true, difficulty: 'mudah' };
-    let trophyCount = 0;
+    let settings = {
+      sound: true,
+      voice: true,
+      bgm: true,
+      bgmVolume: 0.7,
+      sfxVolume: 0.85,
+      voiceProfile: 'huki', // 'huki' | 'bunda' | 'sahabat'
+      difficulty: 'mudah'
+    };
     let currentTopicId = 'numbers';
     let currentMenuMode = 'solo'; // 'solo' | '2p'
     let avatar1 = 'lion', avatar2 = 'tiger';
@@ -4278,31 +5869,115 @@
     async function safeStorageSet(key, val) {
       try { localStorage.setItem(key, val); if (window.storage) await window.storage.set(key, val, false); } catch (e) { }
     }
+    function getCleanUnlockedStickers() {
+      const validIds = new Set(STICKERS.map(s => s.id));
+      const clean = Array.from(new Set((unlockedStickers || []).filter(id => validIds.has(id))));
+      if (!clean.includes('stk_owl')) clean.unshift('stk_owl');
+      return clean;
+    }
+    function getUnlockedStickersCount() {
+      return getCleanUnlockedStickers().length;
+    }
+
     async function loadPersisted() {
       const s = await safeStorageGet('settings');
       if (s) { try { settings = { ...settings, ...JSON.parse(s) }; } catch (e) { } }
-      const t = await safeStorageGet('trophyCount');
-      if (t != null) trophyCount = Number(t) || 0;
+      
+      // Coins Economy Persistence
+      const c = await safeStorageGet('coinCount');
+      if (c != null) {
+        coinCount = Number(c) || 0;
+      } else {
+        coinCount = 10; // 10 Starter Welcome Coins
+        safeStorageSet('coinCount', '10');
+      }
+
+      // Unlocked Wahana Persistence
+      const w = await safeStorageGet('unlockedWahana');
+      if (w) {
+        try {
+          const parsed = JSON.parse(w);
+          const validIds = new Set(WAHANA_ITEMS.map(i => i.id));
+          if (Array.isArray(parsed)) unlockedWahana = Array.from(new Set(parsed.filter(id => validIds.has(id))));
+        } catch (e) { }
+      }
+
       const stks = await safeStorageGet('stickers');
-      if (stks) { try { unlockedStickers = JSON.parse(stks); } catch (e) { } }
-      if (!unlockedStickers.includes('stk_owl')) unlockedStickers.unshift('stk_owl');
+      if (stks) {
+        try {
+          const parsed = JSON.parse(stks);
+          if (Array.isArray(parsed)) unlockedStickers = parsed;
+        } catch (e) { }
+      }
+      unlockedStickers = getCleanUnlockedStickers();
+      safeStorageSet('stickers', JSON.stringify(unlockedStickers));
 
       const a1 = await safeStorageGet('avatar1'); if (a1) avatar1 = a1;
       const a2 = await safeStorageGet('avatar2'); if (a2) avatar2 = a2;
+      
+      // Update BGM engine with persisted volume/state
+      if (typeof BgmEngine !== 'undefined') {
+        BgmEngine.setMuted(!settings.bgm);
+        BgmEngine.setVolume(settings.bgmVolume);
+      }
+      updateCoinUI();
     }
+
     function saveSettings() { safeStorageSet('settings', JSON.stringify(settings)); }
-    function awardTrophy() { trophyCount++; safeStorageSet('trophyCount', String(trophyCount)); updateTrophyUI(); }
-    function saveStickers() { safeStorageSet('stickers', JSON.stringify(unlockedStickers)); updateStickersBadgeUI(); }
-    function updateTrophyUI() {
-      const el1 = document.getElementById('trophy-count');
-      const el2 = document.getElementById('trophy-count-topic');
-      if (el1) el1.textContent = '🏆 ' + trophyCount;
-      if (el2) el2.textContent = '🏆 ' + trophyCount;
+    
+    function awardCoins(amount, sourceRect = null) {
+      coinCount = (coinCount || 0) + amount;
+      safeStorageSet('coinCount', String(coinCount));
+      updateCoinUI();
+      playCoinChime();
+
+      if (sourceRect) {
+        spawnFloatingCoin(sourceRect.left + sourceRect.width / 2, sourceRect.top + sourceRect.height / 2);
+      }
+    }
+
+    function spawnFloatingCoin(startX, startY) {
+      const coin = document.createElement('div');
+      coin.className = 'flying-coin-particle';
+      coin.textContent = '🪙';
+      coin.style.left = `${startX}px`;
+      coin.style.top = `${startY}px`;
+
+      const targetEl = document.getElementById('coin-badge-val') || document.getElementById('coin-badge-val-topic');
+      if (targetEl) {
+        const destRect = targetEl.getBoundingClientRect();
+        coin.style.setProperty('--dest-x', `${destRect.left - startX}px`);
+        coin.style.setProperty('--dest-y', `${destRect.top - startY}px`);
+      } else {
+        coin.style.setProperty('--dest-x', '0px');
+        coin.style.setProperty('--dest-y', '-100px');
+      }
+
+      document.body.appendChild(coin);
+      setTimeout(() => coin.remove(), 800);
+    }
+
+    function updateCoinUI() {
+      const c1 = document.getElementById('coin-badge-val');
+      const c2 = document.getElementById('coin-badge-val-topic');
+      const c3 = document.getElementById('coin-badge-val-playground');
+      const cp = document.getElementById('playground-coin-val');
+      if (c1) c1.textContent = coinCount;
+      if (c2) c2.textContent = coinCount;
+      if (c3) c3.textContent = coinCount;
+      if (cp) cp.textContent = coinCount;
+    }
+
+    function saveStickers() {
+      unlockedStickers = getCleanUnlockedStickers();
+      safeStorageSet('stickers', JSON.stringify(unlockedStickers));
+      updateStickersBadgeUI();
     }
     function updateStickersBadgeUI() {
       const b1 = document.getElementById('sticker-badge-val');
       const b2 = document.getElementById('sticker-badge-val-topic');
-      const str = `${unlockedStickers.length}/${STICKERS.length}`;
+      const count = getUnlockedStickersCount();
+      const str = `${count}/${STICKERS.length}`;
       if (b1) b1.textContent = str;
       if (b2) b2.textContent = str;
     }
@@ -4575,20 +6250,32 @@
        AUDIO & SOUND ENGINE (SUPER CHEERFUL FOR KIDS) 🎵
     ============================================================ */
     let actx = null;
-    function getCtx() { if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)(); return actx; }
+    function getCtx() {
+      if (!actx) {
+        actx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      return actx;
+    }
+
     function beep(freq, dur, type = 'sine', vol = 0.2, freqEnd = null) {
       if (!settings.sound) return;
       try {
-        const ctx = getCtx(); if (ctx.state === 'suspended') ctx.resume();
-        const osc = ctx.createOscillator(); const gain = ctx.createGain();
+        const ctx = getCtx();
+        if (ctx.state === 'suspended') ctx.resume();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        const masterSfx = typeof settings.sfxVolume === 'number' ? settings.sfxVolume : 0.85;
+        const targetVol = Math.max(0.001, vol * masterSfx);
+
         osc.type = type; 
         osc.frequency.setValueAtTime(freq, ctx.currentTime);
         if (freqEnd) {
           osc.frequency.exponentialRampToValueAtTime(Math.max(20, freqEnd), ctx.currentTime + dur);
         }
-        gain.gain.setValueAtTime(vol, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
-        osc.connect(gain); gain.connect(ctx.destination); 
+        gain.gain.setValueAtTime(targetVol, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + dur);
+        osc.connect(gain);
+        gain.connect(ctx.destination); 
         osc.start();
         osc.stop(ctx.currentTime + dur);
       } catch (e) { }
@@ -4600,18 +6287,49 @@
 
     function playPop() { 
       if (!settings.sound) return;
-      beep(360, 0.09, 'sine', 0.22, 880); 
+      beep(380, 0.08, 'sine', 0.24, 880); 
     }
 
     function playFlip() { 
       if (!settings.sound) return;
-      beep(520, 0.05, 'triangle', 0.14, 380); 
+      beep(520, 0.05, 'triangle', 0.16, 380); 
     }
 
     function playWhistle() {
       if (!settings.sound) return;
-      beep(650, 0.12, 'sine', 0.15, 980);
-      setTimeout(() => beep(980, 0.18, 'sine', 0.18, 1200), 100);
+      beep(650, 0.12, 'sine', 0.16, 980);
+      setTimeout(() => beep(980, 0.18, 'sine', 0.2, 1200), 100);
+    }
+
+    function playDragSnap() {
+      if (!settings.sound) return;
+      beep(440, 0.06, 'triangle', 0.2, 700);
+      setTimeout(() => beep(880, 0.08, 'sine', 0.15), 35);
+    }
+
+    function playShimmer() {
+      if (!settings.sound) return;
+      [1046.5, 1318.5, 1567.9, 2093.0].forEach((f, i) => {
+        setTimeout(() => beep(f, 0.12, 'triangle', 0.14), i * 35);
+      });
+    }
+
+    function playWhoosh() {
+      if (!settings.sound) return;
+      beep(280, 0.12, 'sine', 0.14, 560);
+    }
+
+    function playCoinChime() {
+      if (!settings.sound) return;
+      beep(987.77, 0.12, 'sine', 0.22, 1318.51);
+      setTimeout(() => beep(1567.98, 0.16, 'triangle', 0.26, 2093.00), 70);
+    }
+
+    function playPurchaseFanfare() {
+      if (!settings.sound) return;
+      [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => {
+        setTimeout(() => beep(f, 0.22, 'triangle', 0.3), i * 90);
+      });
     }
 
     // Suara Benar Ceria & Meriah (Chime Melodi Emas + Harmonik Berdenting)
@@ -4623,11 +6341,10 @@
 
       baseNotes.forEach((f, i) => {
         setTimeout(() => {
-          beep(f, 0.28, 'triangle', 0.24);
-          beep(f * 2, 0.16, 'sine', 0.12); // sparkling bell overtone
+          beep(f, 0.28, 'triangle', 0.25);
+          beep(f * 2, 0.16, 'sine', 0.14); // sparkling bell overtone
           if (i === baseNotes.length - 1) {
-            // Dentingan puncak ekstra ceria
-            setTimeout(() => beep(f * 1.5, 0.35, 'sine', 0.15), 50);
+            setTimeout(() => beep(f * 1.5, 0.35, 'sine', 0.18), 50);
           }
         }, i * 55);
       });
@@ -4637,12 +6354,82 @@
     // Suara Salah Ramah / Lucu (Boing Lembut, tidak mengagetkan anak)
     function playWrong() {
       if (!settings.sound) return;
-      beep(340, 0.16, 'sine', 0.18, 190);
-      setTimeout(() => beep(240, 0.18, 'sine', 0.14, 150), 120);
+      beep(340, 0.16, 'sine', 0.2, 190);
+      setTimeout(() => beep(240, 0.18, 'sine', 0.16, 150), 120);
       vibrate(20);
     }
 
-    // Suara Menang Meriah (Fanfare Kemenangan Ceria)
+    // Suara Menang Meriah (Fanfare Kemenangan Ceria + Tepuk Tangan Panjang)
+    let applauseAudioObj = null;
+
+    function playApplause(durationSec = 3.8) {
+      if (!settings.sound) return;
+      
+      // 1. Play pre-rendered high quality WAV audio asset
+      try {
+        if (!applauseAudioObj) {
+          applauseAudioObj = new Audio('assets/audio/sfx/sfx_applause.wav');
+        }
+        applauseAudioObj.currentTime = 0;
+        const masterSfx = typeof settings.sfxVolume === 'number' ? settings.sfxVolume : 0.85;
+        applauseAudioObj.volume = Math.min(1.0, masterSfx * 0.95);
+        const playPromise = applauseAudioObj.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(e => {
+            synthProceduralApplause(durationSec);
+          });
+        }
+      } catch (e) {
+        synthProceduralApplause(durationSec);
+      }
+    }
+
+    function synthProceduralApplause(durationSec = 3.8) {
+      try {
+        const ctx = getCtx();
+        if (ctx.state === 'suspended') ctx.resume();
+        const masterSfx = typeof settings.sfxVolume === 'number' ? settings.sfxVolume : 0.85;
+        const now = ctx.currentTime;
+
+        const clapCount = 140;
+        for (let i = 0; i < clapCount; i++) {
+          const tOffset = Math.pow(Math.random(), 0.82) * (durationSec - 0.2);
+          const clapTime = now + tOffset;
+          
+          let env = 1.0;
+          if (tOffset < 0.4) env = tOffset / 0.4;
+          else if (tOffset > durationSec - 1.0) env = Math.max(0, (durationSec - tOffset) / 1.0);
+
+          const clapGain = ctx.createGain();
+          const vol = (0.05 + Math.random() * 0.08) * env * masterSfx;
+          clapGain.gain.setValueAtTime(vol, clapTime);
+          clapGain.gain.exponentialRampToValueAtTime(0.0001, clapTime + 0.055);
+
+          const filter = ctx.createBiquadFilter();
+          filter.type = 'bandpass';
+          filter.frequency.setValueAtTime(650 + Math.random() * 950, clapTime);
+          filter.Q.setValueAtTime(2.2 + Math.random() * 1.5, clapTime);
+
+          const bufferSize = Math.floor(ctx.sampleRate * 0.06);
+          const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+          const output = noiseBuffer.getChannelData(0);
+          for (let s = 0; s < bufferSize; s++) {
+            output[s] = Math.random() * 2 - 1;
+          }
+
+          const whiteNoise = ctx.createBufferSource();
+          whiteNoise.buffer = noiseBuffer;
+
+          whiteNoise.connect(filter);
+          filter.connect(clapGain);
+          clapGain.connect(ctx.destination);
+
+          whiteNoise.start(clapTime);
+          whiteNoise.stop(clapTime + 0.06);
+        }
+      } catch (e) { }
+    }
+
     function playWin() {
       if (!settings.sound) return;
       const fanfare = [
@@ -4656,25 +6443,233 @@
       ];
       fanfare.forEach(n => {
         setTimeout(() => {
-          beep(n.f, n.d, 'triangle', 0.25);
-          beep(n.f * 1.5, n.d * 0.7, 'sine', 0.1);
+          beep(n.f, n.d, 'triangle', 0.28);
+          beep(n.f * 1.5, n.d * 0.7, 'sine', 0.12);
         }, n.delay);
       });
+      playApplause(3.8);
       vibrate([30, 40, 30, 40, 80]);
     }
 
     function playGiftOpen() {
       if (!settings.sound) return;
       [523, 659, 784, 1046, 1318, 1568, 2093].forEach((f, i) => {
-        setTimeout(() => beep(f, 0.2, 'triangle', 0.18), i * 60);
+        setTimeout(() => beep(f, 0.2, 'triangle', 0.2), i * 60);
       });
     }
 
-    function playTick() { beep(520, 0.04, 'triangle', 0.08); }
+    function playTick() { beep(520, 0.04, 'triangle', 0.1); }
     function vibrate(pattern) { try { if (navigator.vibrate) navigator.vibrate(pattern); } catch (e) { } }
 
     /* ============================================================
-       INDONESIAN NATURAL VOICE SYNTHESIS 🗣️ (NADA CERIA ANAK)
+       PROCEDURAL WEB AUDIO BGM ENGINE (CHIPTUNE / MUSIC BOX RAMAH ANAK) 🎶
+    ============================================================ */
+    const BgmEngine = (function () {
+      let isPlaying = false;
+      let currentTheme = 'menu'; // 'menu' | 'solo' | 'duel' | 'win'
+      let currentStep = 0;
+      let intervalId = null;
+      let isDucked = false;
+
+      // Note frequency map
+      const N = {
+        C3: 130.81, D3: 146.83, E3: 164.81, F3: 174.61, G3: 196.00, A3: 220.00, B3: 246.94,
+        C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392.00, A4: 440.00, B4: 493.88,
+        C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, A5: 880.00, B5: 987.77,
+        C6: 1046.50, _: 0
+      };
+
+      // Rhythmic patterns for different scene atmospheres
+      const THEMES = {
+        menu: {
+          bpm: 122,
+          melody: [
+            N.C5, N._, N.E5, N.G5, N.A5, N.G5, N.E5, N._,
+            N.F5, N.E5, N.D5, N._, N.G5, N.F5, N.E5, N.D5,
+            N.C5, N.E5, N.G5, N.C6, N.B5, N.A5, N.G5, N.E5,
+            N.D5, N.E5, N.F5, N.D5, N.C5, N._, N.G4, N.C5
+          ],
+          bass: [
+            N.C3, N.G3, N.C3, N.G3, N.F3, N.C3, N.G3, N.D3,
+            N.C3, N.G3, N.A3, N.E3, N.F3, N.G3, N.C3, N.G3
+          ]
+        },
+        solo: {
+          bpm: 110,
+          melody: [
+            N.E5, N.G5, N.C6, N.G5, N.A5, N.G5, N.E5, N.D5,
+            N.C5, N.D5, N.E5, N.C5, N.D5, N._, N.G4, N._,
+            N.E5, N.F5, N.G5, N.C6, N.B5, N.A5, N.G5, N._,
+            N.A5, N.F5, N.D5, N.E5, N.C5, N._, N._, N._
+          ],
+          bass: [
+            N.C3, N.E3, N.G3, N.E3, N.A3, N.E3, N.F3, N.G3,
+            N.C3, N.G3, N.F3, N.C3, N.F3, N.G3, N.C3, N.C3
+          ]
+        },
+        duel: {
+          bpm: 136,
+          melody: [
+            N.C5, N.C5, N.E5, N.G5, N.A5, N.A5, N.G5, N._,
+            N.F5, N.F5, N.E5, N.D5, N.G5, N.G5, N.C6, N._,
+            N.A5, N.C6, N.A5, N.G5, N.E5, N.G5, N.E5, N.D5,
+            N.C5, N.D5, N.E5, N.G5, N.C5, N.E5, N.C5, N._
+          ],
+          bass: [
+            N.C3, N.C3, N.G3, N.G3, N.F3, N.F3, N.G3, N.G3,
+            N.A3, N.A3, N.E3, N.E3, N.F3, N.G3, N.C3, N.C3
+          ]
+        },
+        win: {
+          bpm: 130,
+          melody: [
+            N.C5, N.E5, N.G5, N.C6, N.E6, N.C6, N.G5, N.E5,
+            N.A5, N.C6, N.E6, N.C6, N.G5, N.C6, N.E6, N.G6,
+            N.F5, N.A5, N.C6, N.F6, N.E6, N.D6, N.C6, N.B5,
+            N.C6, N._, N.G5, N._, N.C6, N._, N._, N._
+          ],
+          bass: [
+            N.C3, N.G3, N.C4, N.G3, N.F3, N.C4, N.G3, N.D4,
+            N.F3, N.C4, N.G3, N.D4, N.C3, N.G3, N.C3, N._
+          ]
+        }
+      };
+
+      function playNote(freq, dur, type, baseVol) {
+        if (!settings.bgm || !freq || freq <= 0) return;
+        try {
+          const ctx = getCtx();
+          if (ctx.state === 'suspended') ctx.resume();
+
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          const userVol = typeof settings.bgmVolume === 'number' ? settings.bgmVolume : 0.7;
+          const duckFactor = isDucked ? 0.22 : 1.0;
+          const finalVol = Math.max(0.0001, baseVol * userVol * duckFactor);
+
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+          gain.gain.setValueAtTime(finalVol, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + dur);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start();
+          osc.stop(ctx.currentTime + dur);
+        } catch (e) { }
+      }
+
+      function step() {
+        const theme = THEMES[currentTheme] || THEMES.menu;
+        const melodyNote = theme.melody[currentStep % theme.melody.length];
+        const bassNote = theme.bass[Math.floor(currentStep / 2) % theme.bass.length];
+
+        // Soft cheerful music box / sine synth
+        if (melodyNote > 0) {
+          playNote(melodyNote, 0.16, 'sine', 0.08);
+          // Soft triangle overtone for chime feel
+          playNote(melodyNote * 2, 0.08, 'triangle', 0.025);
+        }
+
+        // Soft bass accompaniment
+        if (currentStep % 2 === 0 && bassNote > 0) {
+          playNote(bassNote, 0.26, 'triangle', 0.07);
+        }
+
+        currentStep++;
+      }
+
+      function start(themeName = 'menu') {
+        currentTheme = themeName;
+        isPlaying = true;
+        if (intervalId) clearInterval(intervalId);
+
+        const theme = THEMES[currentTheme] || THEMES.menu;
+        const stepInterval = (60 / theme.bpm / 2) * 1000;
+        currentStep = 0;
+        intervalId = setInterval(step, stepInterval);
+        updateFloatingButtonUI();
+      }
+
+      function playTheme(themeName) {
+        if (currentTheme === themeName && isPlaying) return;
+        currentTheme = themeName;
+        if (isPlaying && settings.bgm) {
+          start(themeName);
+        }
+      }
+
+      function stop() {
+        isPlaying = false;
+        if (intervalId) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+        updateFloatingButtonUI();
+      }
+
+      function toggle() {
+        settings.bgm = !settings.bgm;
+        saveSettings();
+        if (settings.bgm) {
+          start(currentTheme);
+        } else {
+          stop();
+        }
+        updateFloatingButtonUI();
+      }
+
+      function setMuted(muted) {
+        settings.bgm = !muted;
+        saveSettings();
+        if (settings.bgm) {
+          if (!isPlaying) start(currentTheme);
+        } else {
+          stop();
+        }
+        updateFloatingButtonUI();
+      }
+
+      function setVolume(vol) {
+        settings.bgmVolume = Math.max(0, Math.min(1, vol));
+        saveSettings();
+      }
+
+      function setDucking(duck) {
+        isDucked = duck;
+      }
+
+      function updateFloatingButtonUI() {
+        const buttons = document.querySelectorAll('.music-toggle-btn');
+        const toggleEl = document.getElementById('toggle-bgm');
+        buttons.forEach(btn => {
+          btn.classList.toggle('playing', isPlaying && settings.bgm);
+          btn.classList.toggle('muted', !settings.bgm);
+          btn.innerHTML = settings.bgm ? '🎵' : '🔇';
+          btn.title = settings.bgm ? 'Musik Ceria Aktif (Klik untuk Mute)' : 'Musik Mati (Klik untuk Nyalakan)';
+        });
+        if (toggleEl) {
+          toggleEl.classList.toggle('on', settings.bgm);
+        }
+      }
+
+      return {
+        start,
+        stop,
+        toggle,
+        playTheme,
+        setMuted,
+        setVolume,
+        setDucking,
+        updateFloatingButtonUI,
+        get isPlaying() { return isPlaying && settings.bgm; }
+      };
+    })();
+
+    /* ============================================================
+       INDONESIAN NATURAL VOICE SYNTHESIS 🗣️ (MULTI-PROFIL CERIA)
     ============================================================ */
     let availableVoices = [];
     function loadVoices() {
@@ -4686,10 +6681,36 @@
       loadVoices();
     }
 
-    function getIndonesianVoice() {
+    function isExplicitlyMaleVoice(voice) {
+      if (!voice || !voice.name) return false;
+      const n = voice.name.toLowerCase();
+      return n.includes('aris') || n.includes('dimas') || n.includes('male') || n.includes('pria') || n.includes('cowok') || n.includes('boy') || n.includes('david') || n.includes('george') || n.includes('guy');
+    }
+
+    function getIndonesianVoice(profile = 'huki') {
       if (!availableVoices || availableVoices.length === 0) loadVoices();
       if (!availableVoices || availableVoices.length === 0) return null;
-      return availableVoices.find(v => (v.lang && (v.lang.toLowerCase().startsWith('id') || v.lang.toLowerCase().includes('indonesia')))) || null;
+
+      const idVoices = availableVoices.filter(v => (v.lang && (v.lang.toLowerCase().startsWith('id') || v.lang.toLowerCase().includes('indonesia'))));
+      if (idVoices.length === 0) return availableVoices[0] || null;
+
+      if (profile === 'huki') {
+        // Prioritaskan suara laki-laki Indonesia yang mantap, ramah & bertenaga
+        const maleVoice = idVoices.find(v => isExplicitlyMaleVoice(v));
+        if (maleVoice) return maleVoice;
+      } else if (profile === 'bunda') {
+        // Prioritaskan suara wanita Indonesia yang ramah & lembut
+        const femaleVoice = idVoices.find(v => {
+          const n = (v.name || '').toLowerCase();
+          return n.includes('gadis') || n.includes('female') || n.includes('wanita') || n.includes('indira') || n.includes('putri') || n.includes('siti');
+        });
+        if (femaleVoice) return femaleVoice;
+      } else if (profile === 'sahabat') {
+        // Sahabat Cilik
+        const friendVoice = idVoices.find(v => isExplicitlyMaleVoice(v));
+        if (friendVoice) return friendVoice;
+      }
+      return idVoices[0];
     }
 
     function speakText(text) {
@@ -4707,13 +6728,42 @@
         if (!clean) return;
         const utt = new SpeechSynthesisUtterance(clean);
         utt.lang = 'id-ID';
-        const v = getIndonesianVoice();
+        
+        const profile = settings.voiceProfile || 'huki';
+        const v = getIndonesianVoice(profile);
         if (v) utt.voice = v;
-        utt.pitch = 1.28; // Nada lebih ceria, ramah & ekspresif untuk anak-anak
-        utt.rate = 0.96;  // Artikulasi lebih jelas & bersahabat
+
+        const isMale = isExplicitlyMaleVoice(v);
+
+        // Custom pitch & rate tuning per character persona
+        if (profile === 'bunda') {
+          utt.pitch = 1.22;
+          utt.rate = 0.94;
+        } else if (profile === 'sahabat') {
+          // Suara sahabat cilik (anak laki-laki ceria & lincah)
+          utt.pitch = isMale ? 1.02 : 0.88;
+          utt.rate = 1.08;
+        } else {
+          // Si Huki Ceria: Suara laki-laki tegas, ceria, bertenaga & berwibawa
+          // Bila suara bawaan TTS bersumber dari profil standar/female, turunkan pitch ke 0.82 agar bernada bariton/cowok ramah
+          utt.pitch = isMale ? 0.92 : 0.82;
+          utt.rate = 1.04;
+        }
         utt.volume = 1.0;
+
+        // BGM Auto-Ducking: Soften BGM during narration
+        BgmEngine.setDucking(true);
+        utt.onend = () => {
+          setTimeout(() => BgmEngine.setDucking(false), 200);
+        };
+        utt.onerror = () => {
+          BgmEngine.setDucking(false);
+        };
+
         window.speechSynthesis.speak(utt);
-      } catch (e) { }
+      } catch (e) {
+        BgmEngine.setDucking(false);
+      }
     }
 
     document.getElementById('btn-speak-q').addEventListener('click', () => {
@@ -4803,12 +6853,26 @@
       avatar: document.getElementById('avatar-screen'),
       countdown: document.getElementById('countdown-screen'),
       game: document.getElementById('game-screen'),
-      win: document.getElementById('win-screen')
+      win: document.getElementById('win-screen'),
+      playground: document.getElementById('playground-screen')
     };
 
     function showScreen(name) {
-      Object.values(screens).forEach(s => s.classList.remove('active'));
-      screens[name].classList.add('active');
+      Object.values(screens).forEach(s => s?.classList.remove('active'));
+      if (screens[name]) screens[name].classList.add('active');
+
+      // Adapt BGM theme based on screen
+      if (name === 'topic' || name === 'menu' || name === 'avatar' || name === 'playground') {
+        BgmEngine.playTheme('menu');
+      } else if (name === 'game') {
+        if (state.game && !state.game.isSolo) {
+          BgmEngine.playTheme('duel');
+        } else {
+          BgmEngine.playTheme('solo');
+        }
+      } else if (name === 'win') {
+        BgmEngine.playTheme('win');
+      }
     }
 
     let state = {};
@@ -5070,9 +7134,9 @@
         },
         {
           id: `${topicId}_balloon`,
-          name: `Letup Balon Bergiliran`,
+          name: `Adu Cepat Letup Balon`,
           combo: '🎈✨🎯',
-          desc: `Letup Balon Bergantian ${topic.name}`,
+          desc: `Adu Cepat Letup Balon ${topic.name}`,
           badge: '🎈 Duel Ketangkasan',
           color: '#FF9900',
           shadow: '#D47A00',
@@ -5084,8 +7148,8 @@
           id: `${topicId}_memory2p`,
           name: `Kartu Memori Berdua`,
           combo: '🧠🃏⭐',
-          desc: `Cocokkan Kartu ${topic.name}`,
-          badge: '🧠 Duel Ingatan',
+          desc: `Adu Cepat Kartu Memori`,
+          badge: '⚡ Duel Adu Cepat',
           color: '#9B51E0',
           shadow: '#7234A8',
           topicId: topicId,
@@ -5103,15 +7167,16 @@
           type: 'train'
         },
         {
-          id: `${topicId}_bingo`,
-          name: `Papan Bingo ${topic.name}`,
-          combo: '🎯🌻🐝',
-          desc: `Coret Garis Bingo ${topic.name}`,
-          badge: '🎯 Strategi Ceria',
+          id: `${topicId}_whack`,
+          name: `Tepuk Ceria ${topic.name}`,
+          combo: '🔨✨🎯',
+          desc: `Tepuk Cepat Sasaran ${topic.name} 🎯`,
+          badge: '🔨 Adu Refleks',
           color: '#00D2D3',
           shadow: '#009E9F',
           topicId: topicId,
-          type: 'bingo'
+          type: 'whack',
+          targetScore: 5
         },
         {
           id: `${topicId}_coop`,
@@ -5570,6 +7635,9 @@
       conceptPill.style.boxShadow = '0 3px 0 ' + game.shadow;
       showScreen('game');
 
+      const cheerleaderWrap = document.querySelector('.cheerleader-wrap');
+      if (cheerleaderWrap) cheerleaderWrap.style.display = 'flex';
+
       const mascotEl = document.getElementById('game-mascot');
       const mascot2El = document.getElementById('game-mascot-2');
       
@@ -5611,7 +7679,7 @@
       else if (game.type === 'balloon') initBalloonGame(game);
       else if (game.type === 'memory2p') initMemory2PGame(game);
       else if (game.type === 'train') initTrainGame(game);
-      else if (game.type === 'bingo') initBingoGame(game);
+      else if (game.type === 'whack') initWhackGame(game);
       else if (game.type === 'coop') initCoopGame(game);
     }
 
@@ -5671,101 +7739,205 @@
     }
 
     /* ============================================================
-       2. GAME: BALLOON POP (LETUP BALON 2P BERGILIRAN)
+       2. GAME: BALLOON POP (DUEL ADU CEPAT LETUP BALON 2P)
     ============================================================ */
     const BALLOON_TARGET_SCORE = 5;
+
+    function parseChoiceLabel(c) {
+      if (c.emoji && c.word) return { icon: c.emoji, text: c.word };
+      if (c.emoji && c.name) return { icon: c.emoji, text: c.name };
+      if (c.icon && c.name) return { icon: c.icon, text: c.name };
+      if (c.sample && c.name) return { icon: c.sample, text: c.name };
+      
+      const str = String(c.label || c.id || '').trim();
+      const spaceIdx = str.indexOf(' ');
+      if (spaceIdx > 0) {
+        const firstPart = str.slice(0, spaceIdx).trim();
+        const restPart = str.slice(spaceIdx + 1).trim();
+        if (!/^[a-zA-Z0-9]+$/.test(firstPart)) {
+          return { icon: firstPart, text: restPart };
+        }
+      }
+      return { icon: '', text: str };
+    }
+
     function initBalloonGame(game) {
       qBox.style.display = 'none';
       playersRow.innerHTML = '';
       playersRow.style.display = 'none';
+      const cw = document.querySelector('.cheerleader-wrap');
+      if (cw) cw.style.display = 'none';
+
       state = {
         ...state,
         game,
-        p1Score: 0,
-        p2Score: 0,
-        currentTurn: 1,
-        target: BALLOON_TARGET_SCORE,
+        p1: 0,
+        p2: 0,
+        targetScore: BALLOON_TARGET_SCORE,
         targetVal: null,
-        activeBalloons: [],
-        isPopped: false
+        lockedRound: false,
+        lockedP1: false,
+        lockedP2: false,
+        winner: null
       };
 
       trackArea.innerHTML = `
         <div class="balloon-arena" id="balloon-arena">
-          <div class="balloon-score-bar">
-            <div class="b-score-tag p1">${getAvatarDisplayHTML(avatar1, 22)} P1: <span id="b-p1">0</span>/${BALLOON_TARGET_SCORE} ⭐</div>
-            <div class="memory-turn-banner" id="balloon-turn-banner" style="margin-bottom:0; padding:6px 18px; font-size:clamp(14px, 1.6vw, 17px);">
-              Giliran: ${getAvatarDisplayHTML(avatar1, 24)} Pemain 1
+          <!-- Top Row: P1 Score Card | Central Question Banner | P2 Score Card -->
+          <div class="balloon-top-bar">
+            <!-- P1 Score Card (Left) -->
+            <div class="memory-player-score-card p1" id="score-card-p1">
+              <div class="score-card-avatar">${getAvatarDisplayHTML(avatar1, 44)}</div>
+              <div class="score-card-info">
+                <div class="score-card-name">Pemain 1</div>
+                <div class="score-card-points"><span id="b-p1">0</span> / ${BALLOON_TARGET_SCORE} ⭐</div>
+              </div>
+              <div class="leader-badge" id="leader-badge-p1">👑 Memimpin</div>
             </div>
-            <div class="b-score-tag p2">${getAvatarDisplayHTML(avatar2, 22)} P2: <span id="b-p2">0</span>/${BALLOON_TARGET_SCORE} ⭐</div>
+
+            <!-- Central Target Question Banner -->
+            <div class="balloon-target-banner" id="balloon-target-banner">
+              <div class="balloon-target-prompt" id="balloon-target-prompt">Memuat Misi...</div>
+              <div class="balloon-target-visual" id="balloon-target-visual"></div>
+              <div class="balloon-status-pill" id="balloon-status-pill">🤝 Skor Sama (0 - 0)</div>
+            </div>
+
+            <!-- P2 Score Card (Right) -->
+            <div class="memory-player-score-card p2" id="score-card-p2">
+              <div class="score-card-avatar">${getAvatarDisplayHTML(avatar2, 44)}</div>
+              <div class="score-card-info">
+                <div class="score-card-name">Pemain 2</div>
+                <div class="score-card-points"><span id="b-p2">0</span> / ${BALLOON_TARGET_SCORE} ⭐</div>
+              </div>
+              <div class="leader-badge" id="leader-badge-p2">👑 Memimpin</div>
+            </div>
           </div>
-          <div class="balloon-mission-box" id="balloon-mission-box">
-            <div class="balloon-mission-prompt" id="balloon-mission-prompt">Misi Letup Balon</div>
-            <div class="balloon-mission-visual" id="balloon-mission-visual"></div>
+
+          <!-- Dual Player Balloon Arenas (P1 on Left, P2 on Right) -->
+          <div class="balloon-duel-boards">
+            <!-- P1 Board -->
+            <div class="balloon-player-area p1">
+              <div class="board-header p1-header">${getAvatarDisplayHTML(avatar1, 22)} Balon Pemain 1</div>
+              <div class="balloon-sky-zone" id="balloon-sky-p1"></div>
+            </div>
+
+            <!-- P2 Board -->
+            <div class="balloon-player-area p2">
+              <div class="board-header p2-header">${getAvatarDisplayHTML(avatar2, 22)} Balon Pemain 2</div>
+              <div class="balloon-sky-zone" id="balloon-sky-p2"></div>
+            </div>
           </div>
         </div>`;
 
-      nextBalloonRound();
+      updateBalloonDuelScoreboard();
+      nextBalloonDuelRound();
     }
 
-    function nextBalloonRound() {
-      if (state.winner) return;
-      const arena = document.getElementById('balloon-arena');
-      if (!arena) return;
+    function updateBalloonDuelScoreboard() {
+      const p1El = document.getElementById('b-p1');
+      const p2El = document.getElementById('b-p2');
+      const cardP1 = document.getElementById('score-card-p1');
+      const cardP2 = document.getElementById('score-card-p2');
+      const statusPill = document.getElementById('balloon-status-pill');
 
-      arena.querySelectorAll('.balloon-item').forEach(b => b.remove());
-      state.isPopped = false;
+      if (p1El) p1El.textContent = state.p1;
+      if (p2El) p2El.textContent = state.p2;
+
+      if (cardP1 && cardP2 && statusPill) {
+        if (state.p1 > state.p2) {
+          cardP1.classList.add('is-leading');
+          cardP2.classList.remove('is-leading');
+          statusPill.innerHTML = `👑 Pemain 1 Memimpin (${state.p1} - ${state.p2})`;
+          statusPill.style.color = '#BE123C';
+        } else if (state.p2 > state.p1) {
+          cardP2.classList.add('is-leading');
+          cardP1.classList.remove('is-leading');
+          statusPill.innerHTML = `👑 Pemain 2 Memimpin (${state.p1} - ${state.p2})`;
+          statusPill.style.color = '#0F766E';
+        } else {
+          cardP1.classList.remove('is-leading');
+          cardP2.classList.remove('is-leading');
+          statusPill.innerHTML = `🤝 Skor Sama (${state.p1} - ${state.p2})`;
+          statusPill.style.color = '#64748B';
+        }
+      }
+    }
+
+    function nextBalloonDuelRound() {
+      if (state.winner) return;
+      const skyP1 = document.getElementById('balloon-sky-p1');
+      const skyP2 = document.getElementById('balloon-sky-p2');
+      if (!skyP1 || !skyP2) return;
+
+      skyP1.innerHTML = '';
+      skyP2.innerHTML = '';
+      state.lockedRound = false;
+      state.lockedP1 = false;
+      state.lockedP2 = false;
 
       const q = generateQuestionForTopic(state.game.topicId);
       state.targetVal = q.correctId;
 
-      const promptEl = document.getElementById('balloon-mission-prompt');
-      const visualEl = document.getElementById('balloon-mission-visual');
+      const promptEl = document.getElementById('balloon-target-prompt');
+      const visualEl = document.getElementById('balloon-target-visual');
       if (promptEl) promptEl.textContent = q.displayPrompt || q.promptText;
       if (visualEl) visualEl.innerHTML = q.visualHTML;
 
-      const currentAvatar = state.currentTurn === 1 ? avatar1 : avatar2;
-      const banner = document.getElementById('balloon-turn-banner');
-      if (banner) {
-        banner.innerHTML = `Giliran: ${getAvatarDisplayHTML(currentAvatar, 24)} Pemain ${state.currentTurn}`;
-      }
-
-      updateMascotCheer(`Giliran ${state.currentTurn === 1 ? 'Pemain 1' : 'Pemain 2'}! ${q.promptText}`, true);
       speakText(q.promptText);
 
-      const balloonColors = ['#FF5E62', '#FF9900', '#FFD13B', '#2ECC71', '#00D2D3', '#9B51E0', '#FF6584'];
+      const balloonColors = ['#FF5E62', '#FF9900', '#2ECC71', '#00D2D3', '#9B51E0', '#FF6584'];
       const choices = q.choices;
-
-      state.activeBalloons = [];
       const totalChoices = choices.length;
+
+      // Populate Player 1's Balloons (Symmetrical order & matching colors)
       choices.forEach((c, idx) => {
-        const b = document.createElement('div');
-        b.className = 'balloon-item';
         const col = balloonColors[idx % balloonColors.length];
-        b.style.background = col;
-        b.style.animationDelay = (idx * 0.4) + 's';
-        
-        const leftPercent = totalChoices === 1 ? 50 : 18 + (idx * (64 / (totalChoices - 1)));
-        b.style.left = leftPercent + '%';
-        b.style.transform = 'translateX(-50%)';
-        b.style.bottom = (20 + (idx % 2 === 1 ? 25 : 0)) + 'px';
-        b.dataset.val = c.id;
+        const b = createBalloonElement(1, c, idx, totalChoices, col);
+        skyP1.appendChild(b);
+      });
 
-        b.innerHTML = `<span class="balloon-val">${c.label}</span>`;
-
-        b.addEventListener('click', (e) => {
-          handleBalloonTurnTap(state.currentTurn, c.id, b, e);
-        });
-
-        arena.appendChild(b);
-        state.activeBalloons.push({ val: c.id, el: b });
+      // Populate Player 2's Balloons (Exact same symmetrical order & matching colors)
+      choices.forEach((c, idx) => {
+        const col = balloonColors[idx % balloonColors.length];
+        const b = createBalloonElement(2, c, idx, totalChoices, col);
+        skyP2.appendChild(b);
       });
     }
 
-    function handleBalloonTurnTap(player, val, el, e) {
-      if (state.winner || state.isPopped) return;
+    function createBalloonElement(player, c, idx, totalChoices, col) {
+      const b = document.createElement('div');
+      b.className = 'balloon-item';
+      b.style.background = col;
+      b.dataset.val = c.id;
+
+      const parsed = parseChoiceLabel(c);
+      if (parsed.icon) {
+        b.innerHTML = `
+          <div class="balloon-content">
+            <div class="balloon-icon">${parsed.icon}</div>
+            <div class="balloon-text">${parsed.text}</div>
+          </div>`;
+      } else {
+        b.innerHTML = `
+          <div class="balloon-content">
+            <div class="balloon-text standalone">${parsed.text}</div>
+          </div>`;
+      }
+
+      b.addEventListener('click', (e) => {
+        handleBalloonDuelTap(player, c.id, b, e);
+      });
+
+      return b;
+    }
+
+    function handleBalloonDuelTap(player, val, el, e) {
+      if (state.winner || state.lockedRound) return;
+      if (player === 1 && state.lockedP1) return;
+      if (player === 2 && state.lockedP2) return;
+
       if (val === state.targetVal) {
-        state.isPopped = true;
+        state.lockedRound = true;
         state.correctCount++;
         playPop();
         playCorrect(player);
@@ -5773,149 +7945,336 @@
         const rect = el.getBoundingClientRect ? el.getBoundingClientRect() : { left: window.innerWidth / 2, top: 200, width: 40, height: 40 };
         burstStarParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
 
-        el.style.transform = 'translateX(-50%) scale(1.4)';
+        el.style.transform = 'scale(1.35)';
         el.style.opacity = '0';
         setTimeout(() => el.remove(), 250);
 
-        if (player === 1) state.p1Score++; else state.p2Score++;
-        const p1El = document.getElementById('b-p1');
-        const p2El = document.getElementById('b-p2');
-        if (p1El) p1El.textContent = state.p1Score;
-        if (p2El) p2El.textContent = state.p2Score;
+        if (player === 1) state.p1++; else state.p2++;
+        updateBalloonDuelScoreboard();
 
-        updateMascotCheer(`Hebat! ${player === 1 ? avatar1 : avatar2} meletupkan balon dengan tepat! ⭐`, true);
-
-        if (state.p1Score >= state.target || state.p2Score >= state.target) {
-          state.winner = state.p1Score >= state.target ? 1 : 2;
+        if (state.p1 >= state.targetScore || state.p2 >= state.targetScore) {
+          state.winner = state.p1 >= state.targetScore ? 1 : 2;
           timers.push(setTimeout(() => showWinPlayer(state.winner, state.game), 550));
           return;
         }
-        // Ganti giliran ke pemain berikutnya setelah ronde sukses
-        state.currentTurn = state.currentTurn === 1 ? 2 : 1;
-        timers.push(setTimeout(() => nextBalloonRound(), 750));
+
+        timers.push(setTimeout(() => nextBalloonDuelRound(), 550));
       } else {
         state.wrongCount++;
         el.classList.add('shake');
         playWrong();
-        updateMascotCheer("Hampir tepat! Giliran berganti ke lawan ya!");
+        if (player === 1) state.lockedP1 = true;
+        if (player === 2) state.lockedP2 = true;
+
         timers.push(setTimeout(() => {
           el.classList.remove('shake');
-          state.currentTurn = state.currentTurn === 1 ? 2 : 1;
-          const currentAvatar = state.currentTurn === 1 ? avatar1 : avatar2;
-          const banner = document.getElementById('balloon-turn-banner');
-          if (banner) {
-            banner.innerHTML = `Giliran: ${getAvatarDisplayHTML(currentAvatar, 24)} Pemain ${state.currentTurn}`;
-          }
-        }, 500));
+          if (player === 1) state.lockedP1 = false;
+          if (player === 2) state.lockedP2 = false;
+        }, 450));
       }
     }
 
     /* ============================================================
-       3. GAME: 2P MEMORY MATCH (KARTU MEMORI BERDUA)
+       3. GAME: 2P MEMORY MATCH (ADU CEPAT KARTU MEMORI)
     ============================================================ */
+    const MEMORY_DUEL_TARGET = 3; // 3 pasang kartu per pemain (total 6 kartu per papan)
+
     function initMemory2PGame(game) {
       qBox.style.display = 'none';
       playersRow.innerHTML = '';
-      state = { ...state, game, p1Score: 0, p2Score: 0, currentTurn: 1, flippedCards: [], matchedCount: 0 };
+      const cw = document.querySelector('.cheerleader-wrap');
+      if (cw) cw.style.display = 'none';
+
+      state = {
+        ...state,
+        game,
+        p1Score: 0,
+        p2Score: 0,
+        target: MEMORY_DUEL_TARGET,
+        p1Flipped: [],
+        p2Flipped: [],
+        p1Matched: 0,
+        p2Matched: 0,
+        winner: null
+      };
 
       trackArea.innerHTML = `
         <div class="memory-arena">
-          <div class="memory-turn-banner" id="memory-turn-banner">Giliran: ${getAvatarDisplayHTML(avatar1, 28)} Pemain 1</div>
-          <div class="memory-grid" id="memory-grid"></div>
+          <!-- Live Leader Scoreboard -->
+          <div class="memory-duel-scoreboard">
+            <div class="memory-player-score-card p1" id="score-card-p1">
+              <div class="score-card-avatar">${getAvatarDisplayHTML(avatar1, 44)}</div>
+              <div class="score-card-info">
+                <div class="score-card-name">Pemain 1</div>
+                <div class="score-card-points"><span id="mem-p1-score">0</span> / ${MEMORY_DUEL_TARGET} ⭐</div>
+              </div>
+              <div class="leader-badge" id="leader-badge-p1">👑 Memimpin</div>
+            </div>
+
+            <div class="memory-duel-status" id="memory-duel-status">
+              <div class="duel-status-title">⚡ ADU CEPAT MEMORI ⚡</div>
+              <div class="duel-status-sub" id="duel-status-sub">🤝 Skor Sama (0 - 0)</div>
+            </div>
+
+            <div class="memory-player-score-card p2" id="score-card-p2">
+              <div class="score-card-avatar">${getAvatarDisplayHTML(avatar2, 44)}</div>
+              <div class="score-card-info">
+                <div class="score-card-name">Pemain 2</div>
+                <div class="score-card-points"><span id="mem-p2-score">0</span> / ${MEMORY_DUEL_TARGET} ⭐</div>
+              </div>
+              <div class="leader-badge" id="leader-badge-p2">👑 Memimpin</div>
+            </div>
+          </div>
+
+          <!-- Dual Arena (Simultaneous Play, No Turn Waiting) -->
+          <div class="memory-duel-arena">
+            <div class="memory-player-board p1">
+              <div class="board-header p1-header">${getAvatarDisplayHTML(avatar1, 22)} Papan Pemain 1</div>
+              <div class="memory-grid duel-grid" id="memory-grid-p1"></div>
+            </div>
+
+            <div class="memory-player-board p2">
+              <div class="board-header p2-header">${getAvatarDisplayHTML(avatar2, 22)} Papan Pemain 2</div>
+              <div class="memory-grid duel-grid" id="memory-grid-p2"></div>
+            </div>
+          </div>
         </div>`;
 
-      buildMemory2PGrid();
+      buildMemoryDuelGrids();
+      updateMemoryLeaderboard();
     }
 
     function getMemoryPairs(topicId) {
-      if (topicId === 'letters') {
-        return TOPIC_DATA.letters.items.slice(0, 6).map(l => ({ A: l.letter, B: `${l.emoji} ${l.word}` }));
-      } else if (topicId === 'animals') {
-        return TOPIC_DATA.animals.items.slice(0, 6).map(a => ({ A: `${a.emoji} ${a.name}`, B: `${a.food} Makanan` }));
-      } else if (topicId === 'colors') {
-        return TOPIC_DATA.colors.items.slice(0, 6).map(c => ({ A: `${c.emoji} ${c.name}`, B: `${c.sample} Benda` }));
-      } else if (topicId === 'vehicles') {
-        return TOPIC_DATA.vehicles.items.slice(0, 6).map(v => ({ A: `${v.emoji} ${v.name}`, B: `${v.sound}` }));
-      } else if (topicId === 'nature') {
-        return TOPIC_DATA.nature.items.slice(0, 6).map(n => ({ A: `${n.emoji} ${n.name}`, B: `${n.time}` }));
-      } else if (topicId === 'fruits') {
-        return TOPIC_DATA.fruits.items.slice(0, 6).map(f => ({ A: `${f.emoji} ${f.name}`, B: `${f.type}` }));
-      } else if (topicId === 'body') {
-        return TOPIC_DATA.body.items.slice(0, 6).map(b => ({ A: `${b.emoji} ${b.name}`, B: `${b.func}` }));
-      } else if (topicId === 'professions') {
-        return TOPIC_DATA.professions.items.slice(0, 6).map(p => ({ A: `${p.emoji} ${p.name}`, B: `${p.tool}` }));
-      } else if (topicId === 'habits') {
-        return TOPIC_DATA.habits.items.slice(0, 6).map(h => ({ A: `${h.emoji} ${h.name}`, B: `${h.tool}` }));
-      } else if (topicId === 'music') {
-        return TOPIC_DATA.music.items.slice(0, 6).map(m => ({ A: `${m.emoji} ${m.name}`, B: `${m.note}` }));
-      } else {
-        return [
-          { A: '1', B: '🍉' },
-          { A: '2', B: '🍎🍎' },
-          { A: '3', B: '🍌🍌🍌' },
-          { A: '4', B: '🍓🍓🍓🍓' },
-          { A: '5', B: '🍊🍊🍊🍊🍊' },
-          { A: '6', B: '🍇🍇🍇🍇🍇🍇' }
+      let rawList = [];
+
+      if (topicId === 'numbers') {
+        const numPalette = [
+          { val: 1, name: 'Angka 1', word: 'Satu', color: '#FF5E62', bg: '#FFE8EA', border: '#FFB3B8', shadow: '#FF8B93' },
+          { val: 2, name: 'Angka 2', word: 'Dua', color: '#FF9900', bg: '#FFF4E0', border: '#FFD08A', shadow: '#FFAF38' },
+          { val: 3, name: 'Angka 3', word: 'Tiga', color: '#F1C40F', bg: '#FEF9E7', border: '#F9E79F', shadow: '#F39C12' },
+          { val: 4, name: 'Angka 4', word: 'Empat', color: '#2ECC71', bg: '#E8F8F5', border: '#A3E4D7', shadow: '#27AE60' },
+          { val: 5, name: 'Angka 5', word: 'Lima', color: '#00D2D3', bg: '#E0FBFB', border: '#98F3F3', shadow: '#00A3A4' },
+          { val: 6, name: 'Angka 6', word: 'Enam', color: '#3498DB', bg: '#EBF5FB', border: '#AED6F1', shadow: '#2980B9' },
+          { val: 7, name: 'Angka 7', word: 'Tujuh', color: '#9B51E0', bg: '#F4ECF7', border: '#D7BDE2', shadow: '#8E44AD' },
+          { val: 8, name: 'Angka 8', word: 'Delapan', color: '#FF6584', bg: '#FCE4EC', border: '#F8BBD0', shadow: '#E91E63' },
+          { val: 9, name: 'Angka 9', word: 'Sembilan', color: '#E67E22', bg: '#FBEEE6', border: '#EDBB99', shadow: '#D35400' },
+          { val: 10, name: 'Angka 10', word: 'Sepuluh', color: '#1ABC9C', bg: '#E8F8F5', border: '#A2D9CE', shadow: '#16A085' }
         ];
+        rawList = numPalette.map(n => ({
+          name: n.name,
+          speakName: n.name,
+          displayHTML: `<div class="memory-card-img num-badge" style="--badge-color:${n.color}; --badge-bg:${n.bg}; --badge-border:${n.border}; --badge-shadow:${n.shadow};">${n.val}</div>`
+        }));
+      } else if (topicId === 'letters') {
+        const letterPalette = [
+          { letter: 'A', word: 'Apel', color: '#FF5E62', bg: '#FFE8EA', border: '#FFB3B8', shadow: '#FF8B93' },
+          { letter: 'B', word: 'Bebek', color: '#FF9900', bg: '#FFF4E0', border: '#FFD08A', shadow: '#FFAF38' },
+          { letter: 'C', word: 'Ceri', color: '#F39C12', bg: '#FEF9E7', border: '#FAD7A0', shadow: '#D68910' },
+          { letter: 'D', word: 'Domba', color: '#27AE60', bg: '#EAFAF1', border: '#A9DFBF', shadow: '#1E8449' },
+          { letter: 'E', word: 'Es Krim', color: '#00D2D3', bg: '#E0FBFB', border: '#98F3F3', shadow: '#00A3A4' },
+          { letter: 'G', word: 'Gajah', color: '#2980B9', bg: '#EAF2F8', border: '#A4C7E8', shadow: '#1F618D' },
+          { letter: 'I', word: 'Ikan', color: '#8E44AD', bg: '#F4ECF7', border: '#D2B4DE', shadow: '#6C3483' },
+          { letter: 'J', word: 'Jeruk', color: '#E74C3C', bg: '#FDEDEC', border: '#F5B7B1', shadow: '#C0392B' },
+          { letter: 'K', word: 'Kucing', color: '#D35400', bg: '#FBEEE6', border: '#EDBB99', shadow: '#BA4A00' },
+          { letter: 'M', word: 'Matahari', color: '#16A085', bg: '#E8F8F5', border: '#A2D9CE', shadow: '#117864' },
+          { letter: 'P', word: 'Pisang', color: '#FF6584', bg: '#FCE4EC', border: '#F8BBD0', shadow: '#E91E63' },
+          { letter: 'R', word: 'Rumah', color: '#34495E', bg: '#EAECEE', border: '#BDC3C7', shadow: '#2C3E50' },
+          { letter: 'S', word: 'Singa', color: '#E67E22', bg: '#FBEEE6', border: '#F0B27A', shadow: '#CA6F1E' },
+          { letter: 'T', word: 'Topi', color: '#9B51E0', bg: '#F4ECF7', border: '#D7BDE2', shadow: '#7D3C98' }
+        ];
+        rawList = letterPalette.map(l => ({
+          name: `Huruf ${l.letter}`,
+          speakName: `Huruf ${l.letter}`,
+          displayHTML: `<div class="memory-card-img letter-badge" style="--badge-color:${l.color}; --badge-bg:${l.bg}; --badge-border:${l.border}; --badge-shadow:${l.shadow};">${l.letter}</div>`
+        }));
+      } else if (topicId === 'animals') {
+        rawList = TOPIC_DATA.animals.items.map(a => ({ emoji: a.emoji, name: a.name, speakName: a.name }));
+      } else if (topicId === 'colors') {
+        const colorsList = TOPIC_DATA.colors.items.map(c => ({ emoji: c.emoji, name: c.name, speakName: `Warna ${c.name}` }));
+        const shapesList = (TOPIC_DATA.colors.shapes || []).map(s => ({ emoji: s.emoji, name: s.name.split(' / ')[0], speakName: `Bentuk ${s.name.split(' / ')[0]}` }));
+        rawList = [...colorsList, ...shapesList];
+      } else if (topicId === 'fruits') {
+        rawList = TOPIC_DATA.fruits.items.map(f => ({ emoji: f.emoji, name: f.name, speakName: f.name }));
+      } else if (topicId === 'vehicles') {
+        rawList = TOPIC_DATA.vehicles.items.map(v => ({ emoji: v.emoji, name: v.name, speakName: v.name }));
+      } else if (topicId === 'nature') {
+        rawList = TOPIC_DATA.nature.items.map(n => ({ emoji: n.emoji, name: n.name.split(' / ')[0], speakName: n.name.split(' / ')[0] }));
+      } else if (topicId === 'body') {
+        rawList = TOPIC_DATA.body.items.map(b => ({ emoji: b.emoji, name: b.name, speakName: b.name }));
+      } else if (topicId === 'professions') {
+        rawList = TOPIC_DATA.professions.items.map(p => ({ emoji: p.emoji, name: p.name.split(' / ')[0], speakName: p.name.split(' / ')[0] }));
+      } else if (topicId === 'habits') {
+        rawList = TOPIC_DATA.habits.items.map(h => ({
+          emoji: h.emoji,
+          name: h.name.split(' ').slice(0, 2).join(' '),
+          speakName: h.name.split(' ').slice(0, 2).join(' ')
+        }));
+      } else if (topicId === 'music') {
+        rawList = TOPIC_DATA.music.items.map(m => ({ emoji: m.emoji, name: m.name, speakName: m.name }));
+      } else {
+        const topicData = TOPIC_DATA[topicId];
+        if (topicData && topicData.items) {
+          rawList = topicData.items.map(it => ({ emoji: it.emoji || '⭐', name: it.name || it.word || '', speakName: it.name || it.word || '' }));
+        } else {
+          rawList = [
+            { emoji: '🍎', name: 'Apel', speakName: 'Apel' },
+            { emoji: '🍌', name: 'Pisang', speakName: 'Pisang' },
+            { emoji: '🍓', name: 'Stroberi', speakName: 'Stroberi' },
+            { emoji: '🍊', name: 'Jeruk', speakName: 'Jeruk' },
+            { emoji: '🍉', name: 'Semangka', speakName: 'Semangka' },
+            { emoji: '🍇', name: 'Anggur', speakName: 'Anggur' }
+          ];
+        }
       }
+
+      // Select 6 unique items (shuffled if there are more than 6)
+      const selected = shuffle(rawList).slice(0, 6);
+      return selected;
     }
 
-    function buildMemory2PGrid() {
-      const grid = document.getElementById('memory-grid');
-      grid.innerHTML = '';
+    function buildMemoryDuelGrids() {
+      const grid1 = document.getElementById('memory-grid-p1');
+      const grid2 = document.getElementById('memory-grid-p2');
+      if (!grid1 || !grid2) return;
 
-      const pairsData = getMemoryPairs(state.game.topicId);
+      grid1.innerHTML = '';
+      grid2.innerHTML = '';
 
-      let cardsList = [];
-      pairsData.forEach((p, idx) => {
-        cardsList.push({ pairId: idx, content: p.A });
-        cardsList.push({ pairId: idx, content: p.B });
+      const allItems = getMemoryPairs(state.game.topicId);
+      const duelItems = allItems.slice(0, MEMORY_DUEL_TARGET);
+
+      // P1 Cards
+      let cardsP1 = [];
+      duelItems.forEach((item, idx) => {
+        cardsP1.push({ pairId: idx, emoji: item.emoji || '', name: item.name, speakName: item.speakName || item.name, displayHTML: item.displayHTML || '' });
+        cardsP1.push({ pairId: idx, emoji: item.emoji || '', name: item.name, speakName: item.speakName || item.name, displayHTML: item.displayHTML || '' });
       });
-      cardsList = shuffle(cardsList);
+      cardsP1 = shuffle(cardsP1);
 
-      cardsList.forEach((c, idx) => {
+      // P2 Cards
+      let cardsP2 = [];
+      duelItems.forEach((item, idx) => {
+        cardsP2.push({ pairId: idx, emoji: item.emoji || '', name: item.name, speakName: item.speakName || item.name, displayHTML: item.displayHTML || '' });
+        cardsP2.push({ pairId: idx, emoji: item.emoji || '', name: item.name, speakName: item.speakName || item.name, displayHTML: item.displayHTML || '' });
+      });
+      cardsP2 = shuffle(cardsP2);
+
+      // Render P1 Grid
+      cardsP1.forEach((c, idx) => {
         const card = document.createElement('div');
         card.className = 'memory-card';
+        card.dataset.player = '1';
         card.dataset.idx = idx;
         card.dataset.pairId = c.pairId;
         card.innerHTML = `
-          <div class="memory-face back">?</div>
-          <div class="memory-face front">${c.content}</div>
+          <div class="memory-face back">❓</div>
+          <div class="memory-face front">
+            ${c.displayHTML ? c.displayHTML : `<div class="memory-card-img">${c.emoji}</div>`}
+            <div class="memory-card-label">${c.name}</div>
+          </div>
         `;
-        card.addEventListener('click', () => {
-          handleCardFlip2P(card, c);
-        });
-        grid.appendChild(card);
+        card.addEventListener('click', () => handleCardFlipDuel(1, card, c));
+        grid1.appendChild(card);
       });
-      updateMascotCheer("Buka 2 kartu yang berpasangan ya! 🃏", true);
+
+      // Render P2 Grid
+      cardsP2.forEach((c, idx) => {
+        const card = document.createElement('div');
+        card.className = 'memory-card';
+        card.dataset.player = '2';
+        card.dataset.idx = idx;
+        card.dataset.pairId = c.pairId;
+        card.innerHTML = `
+          <div class="memory-face back">❓</div>
+          <div class="memory-face front">
+            ${c.displayHTML ? c.displayHTML : `<div class="memory-card-img">${c.emoji}</div>`}
+            <div class="memory-card-label">${c.name}</div>
+          </div>
+        `;
+        card.addEventListener('click', () => handleCardFlipDuel(2, card, c));
+        grid2.appendChild(card);
+      });
+
+      if (state.game.topicId === 'numbers') {
+        updateMascotCheer("Adu cepat buka 2 kartu angka yang sama! 🔢 Siapa tercepat?", true);
+        speakText("Ayo adu cepat cocokkan dua angka yang sama!");
+      } else if (state.game.topicId === 'letters') {
+        updateMascotCheer("Adu cepat buka 2 kartu huruf yang sama! 🔤 Siapa tercepat?", true);
+        speakText("Ayo adu cepat cocokkan dua huruf yang sama!");
+      } else if (state.game.topicId === 'animals') {
+        updateMascotCheer("Adu cepat buka 2 kartu hewan yang sama! 🐱 Siapa tercepat?", true);
+        speakText("Ayo adu cepat cocokkan dua hewan yang sama!");
+      } else {
+        updateMascotCheer("Adu cepat buka 2 kartu bergambar sama! ⚡ Siapa tercepat?", true);
+        speakText("Ayo adu cepat cocokkan kartu yang sama!");
+      }
     }
 
-    function handleCardFlip2P(cardEl, cardData) {
-      if (cardEl.classList.contains('flipped') || cardEl.classList.contains('matched') || state.flippedCards.length >= 2) return;
+    function updateMemoryLeaderboard() {
+      const p1ScoreEl = document.getElementById('mem-p1-score');
+      const p2ScoreEl = document.getElementById('mem-p2-score');
+      const cardP1 = document.getElementById('score-card-p1');
+      const cardP2 = document.getElementById('score-card-p2');
+      const statusSub = document.getElementById('duel-status-sub');
+
+      if (p1ScoreEl) p1ScoreEl.textContent = state.p1Score;
+      if (p2ScoreEl) p2ScoreEl.textContent = state.p2Score;
+
+      if (!cardP1 || !cardP2 || !statusSub) return;
+
+      cardP1.classList.remove('is-leading');
+      cardP2.classList.remove('is-leading');
+
+      if (state.p1Score > state.p2Score) {
+        cardP1.classList.add('is-leading');
+        statusSub.innerHTML = `<span style="color:var(--candy-coral); font-weight:900;">👑 Pemain 1 Unggul! (${state.p1Score} - ${state.p2Score})</span>`;
+      } else if (state.p2Score > state.p1Score) {
+        cardP2.classList.add('is-leading');
+        statusSub.innerHTML = `<span style="color:#009E9F; font-weight:900;">👑 Pemain 2 Unggul! (${state.p2Score} - ${state.p1Score})</span>`;
+      } else {
+        statusSub.innerHTML = `🤝 Skor Sama (${state.p1Score} - ${state.p2Score})`;
+      }
+    }
+
+    function handleCardFlipDuel(player, cardEl, cardData) {
+      if (state.winner) return;
+      if (cardEl.classList.contains('flipped') || cardEl.classList.contains('matched')) return;
+
+      const flippedKey = player === 1 ? 'p1Flipped' : 'p2Flipped';
+      if (state[flippedKey].length >= 2) return;
 
       playFlip();
       cardEl.classList.add('flipped');
-      state.flippedCards.push({ el: cardEl, data: cardData });
+      state[flippedKey].push({ el: cardEl, data: cardData });
 
-      if (state.flippedCards.length === 2) {
-        const [c1, c2] = state.flippedCards;
+      if (state[flippedKey].length === 2) {
+        const [c1, c2] = state[flippedKey];
         if (c1.data.pairId === c2.data.pairId) {
           state.correctCount++;
-          playCorrect(state.currentTurn);
-          const rect = c2.el.getBoundingClientRect();
+          playCorrect(player);
+          const rect = c2.el.getBoundingClientRect ? c2.el.getBoundingClientRect() : { left: window.innerWidth / 2, top: 200, width: 40, height: 40 };
           burstStarParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
 
           c1.el.classList.add('matched');
           c2.el.classList.add('matched');
 
-          if (state.currentTurn === 1) state.p1Score++; else state.p2Score++;
-          state.matchedCount++;
-          state.flippedCards = [];
-          updateMascotCheer(`Hebat! Pasangan cocok ditemukan! ⭐`, true);
+          if (player === 1) {
+            state.p1Score++;
+            state.p1Matched++;
+          } else {
+            state.p2Score++;
+            state.p2Matched++;
+          }
 
-          if (state.matchedCount >= 6) {
-            state.winner = state.p1Score >= state.p2Score ? 1 : 2;
-            timers.push(setTimeout(() => showWinPlayer(state.winner, state.game), 600));
+          state[flippedKey] = [];
+          updateMemoryLeaderboard();
+
+          updateMascotCheer(`Hebat! ${player === 1 ? 'Pemain 1' : 'Pemain 2'} cocokkan ${c1.data.name}! ⭐`, true);
+          speakText(`${c1.data.speakName || c1.data.name} cocok!`);
+
+          if (state.p1Matched >= state.target || state.p2Matched >= state.target) {
+            state.winner = state.p1Matched >= state.target ? 1 : 2;
+            timers.push(setTimeout(() => showWinPlayer(state.winner, state.game, "Paling Cepat & Unggul Menemukan Semua Pasangan! 🏆✨"), 550));
             return;
           }
         } else {
@@ -5924,14 +8283,8 @@
           timers.push(setTimeout(() => {
             c1.el.classList.remove('flipped');
             c2.el.classList.remove('flipped');
-            state.flippedCards = [];
-            state.currentTurn = state.currentTurn === 1 ? 2 : 1;
-            const banner = document.getElementById('memory-turn-banner');
-            if (banner) {
-              const activeAvatar = state.currentTurn === 1 ? avatar1 : avatar2;
-              banner.innerHTML = `Giliran: ${getAvatarDisplayHTML(activeAvatar, 28)} Pemain ${state.currentTurn}`;
-            }
-          }, 1000));
+            state[flippedKey] = [];
+          }, 650));
         }
       }
     }
@@ -5944,9 +8297,13 @@
       state = { ...state, game, p1: 0, p2: 0, locked: false, winner: null };
       trackArea.innerHTML = `
         <div class="train-arena">
-          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-            <span style="font-weight:800; font-size:18px; color:var(--candy-coral);">${avatar1} P1: <span id="tr-p1">0</span>/5 🚂</span>
-            <span style="font-weight:800; font-size:18px; color:var(--candy-teal);">${avatar2} P2: <span id="tr-p2">0</span>/5 🚂</span>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; padding:0 8px;">
+            <span style="font-weight:900; font-family:'Baloo 2',sans-serif; font-size:clamp(18px, 2vw, 24px); color:var(--candy-coral); display:flex; align-items:center; gap:8px;">
+              ${getAvatarDisplayHTML(avatar1, 36)} Pemain 1: <span id="tr-p1" style="font-size:clamp(26px, 3vw, 34px); font-weight:900; color:var(--candy-coral);">0</span>/5 🚂
+            </span>
+            <span style="font-weight:900; font-family:'Baloo 2',sans-serif; font-size:clamp(18px, 2vw, 24px); color:var(--candy-teal); display:flex; align-items:center; gap:8px;">
+              ${getAvatarDisplayHTML(avatar2, 36)} Pemain 2: <span id="tr-p2" style="font-size:clamp(26px, 3vw, 34px); font-weight:900; color:#009E9F;">0</span>/5 🚂
+            </span>
           </div>
           <div id="train-track-view" class="train-track"></div>
         </div>`;
@@ -6039,75 +8396,247 @@
     }
 
     /* ============================================================
-       5. GAME: BINGO BOARD
+       5. GAME: 2P TEPUK CERIA (WHACK-A-TARGET)
     ============================================================ */
-    const BINGO_LINES = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
-    function hasBingo(marked) { return BINGO_LINES.some(line => line.every(i => marked[i])); }
+    const WHACK_TARGET_SCORE = 5;
 
-    function initBingoGame(game) {
-      qBox.style.display = 'flex';
-      const items = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    function getWhackItems(topicId) {
+      if (typeof getMemoryPairs === 'function') {
+        const pairs = getMemoryPairs(topicId);
+        if (pairs && pairs.length >= 4) {
+          return pairs.map((it, idx) => ({
+            id: 'whack_' + idx,
+            name: it.name,
+            speakName: it.speakName || it.name,
+            emoji: it.emoji || '⭐',
+            displayHTML: it.displayHTML || ''
+          }));
+        }
+      }
+
+      const topicData = TOPIC_DATA[topicId];
+      if (topicData && topicData.items) {
+        return topicData.items.map((it, idx) => ({
+          id: 'whack_' + idx,
+          name: it.name || it.word || '',
+          speakName: it.name || it.word || '',
+          emoji: it.emoji || '⭐',
+          displayHTML: ''
+        }));
+      }
+
+      return [
+        { id: 'w1', name: 'Apel', speakName: 'Apel', emoji: '🍎', displayHTML: '' },
+        { id: 'w2', name: 'Pisang', speakName: 'Pisang', emoji: '🍌', displayHTML: '' },
+        { id: 'w3', name: 'Stroberi', speakName: 'Stroberi', emoji: '🍓', displayHTML: '' },
+        { id: 'w4', name: 'Jeruk', speakName: 'Jeruk', emoji: '🍊', displayHTML: '' },
+        { id: 'w5', name: 'Semangka', speakName: 'Semangka', emoji: '🍉', displayHTML: '' },
+        { id: 'w6', name: 'Anggur', speakName: 'Anggur', emoji: '🍇', displayHTML: '' }
+      ];
+    }
+
+    function initWhackGame(game) {
+      qBox.style.display = 'none';
+      playersRow.innerHTML = '';
+      const cw = document.querySelector('.cheerleader-wrap');
+      if (cw) cw.style.display = 'none';
+
       state = {
-        ...state, game, board1: shuffle(items), board2: shuffle(items), marked1: Array(9).fill(false), marked2: Array(9).fill(false),
-        attempted1: false, attempted2: false, winner: null
+        ...state,
+        game,
+        p1: 0,
+        p2: 0,
+        targetScore: WHACK_TARGET_SCORE,
+        targetItem: null,
+        lockedRound: false,
+        lastTargetId: null,
+        winner: null
       };
-      renderBingoBoards();
-      playersRow.innerHTML = `
-        <div class="player-panel pp1"><div class="player-header">${getAvatarDisplayHTML(avatar1, 40)} Pemain 1</div><div class="choices" id="choices-p1"></div></div>
-        <div class="player-panel pp2"><div class="player-header">${getAvatarDisplayHTML(avatar2, 40)} Pemain 2</div><div class="choices" id="choices-p2"></div></div>`;
-      nextBingoQuestion();
-    }
-    function renderBingoBoards() {
+
       trackArea.innerHTML = `
-        <div class="bingo-wrap">
-          <div class="bingo-block"><div class="bingo-owner">${getAvatarDisplayHTML(avatar1, 32)} Papan Pemain 1</div><div class="bingo-board" id="board-p1"></div></div>
-          <div class="bingo-block"><div class="bingo-owner">${getAvatarDisplayHTML(avatar2, 32)} Papan Pemain 2</div><div class="bingo-board" id="board-p2"></div></div>
+        <div class="whack-arena">
+          <!-- Top Row: P1 Score Card | Target Sasaran Banner | P2 Score Card -->
+          <div class="whack-top-bar">
+            <!-- P1 Score Card -->
+            <div class="memory-player-score-card p1" id="score-card-p1">
+              <div class="score-card-avatar">${getAvatarDisplayHTML(avatar1, 44)}</div>
+              <div class="score-card-info">
+                <div class="score-card-name">Pemain 1</div>
+                <div class="score-card-points"><span id="whack-p1-score">0</span> / ${WHACK_TARGET_SCORE} ⭐</div>
+              </div>
+              <div class="leader-badge" id="leader-badge-p1">👑 Memimpin</div>
+            </div>
+
+            <!-- Target Announcement Banner in Center -->
+            <div class="whack-target-banner" id="whack-target-banner">
+              <span class="whack-target-label">🎯 TEPUK SASARAN:</span>
+              <div class="whack-target-item" id="whack-target-item">
+                <span class="whack-target-emoji" id="whack-target-emoji">❓</span>
+                <span class="whack-target-name" id="whack-target-name">Memuat...</span>
+              </div>
+              <div class="whack-status-pill" id="duel-status-sub">🤝 Skor Sama (0 - 0)</div>
+            </div>
+
+            <!-- P2 Score Card -->
+            <div class="memory-player-score-card p2" id="score-card-p2">
+              <div class="score-card-avatar">${getAvatarDisplayHTML(avatar2, 44)}</div>
+              <div class="score-card-info">
+                <div class="score-card-name">Pemain 2</div>
+                <div class="score-card-points"><span id="whack-p2-score">0</span> / ${WHACK_TARGET_SCORE} ⭐</div>
+              </div>
+              <div class="leader-badge" id="leader-badge-p2">👑 Memimpin</div>
+            </div>
+          </div>
+
+          <!-- Duel Boards (P1 Left, P2 Right) -->
+          <div class="whack-duel-boards">
+            <div class="whack-player-area p1">
+              <div class="board-header p1-header">${getAvatarDisplayHTML(avatar1, 22)} Papan Pemain 1</div>
+              <div class="whack-holes-grid" id="whack-grid-p1"></div>
+            </div>
+
+            <div class="whack-player-area p2">
+              <div class="board-header p2-header">${getAvatarDisplayHTML(avatar2, 22)} Papan Pemain 2</div>
+              <div class="whack-holes-grid" id="whack-grid-p2"></div>
+            </div>
+          </div>
         </div>`;
-      fillBoardDOM('board-p1', state.board1, state.marked1);
-      fillBoardDOM('board-p2', state.board2, state.marked2);
-    }
-    function fillBoardDOM(elId, numbers, marked) {
-      const el = document.getElementById(elId);
-      if (!el) return;
-      el.innerHTML = numbers.map((num, i) => `<div class="bingo-cell ${marked[i] ? 'marked' : ''}"><span>${num}</span></div>`).join('');
-    }
-    function nextBingoQuestion() {
-      if (state.winner) return;
-      state.attempted1 = false; state.attempted2 = false;
-      state.question = generateQuestionForTopic('numbers');
-      qPrompt.textContent = state.question.promptText;
-      qVisual.innerHTML = state.question.visualHTML;
-      speakText(state.question.promptText);
-      renderChoices('choices-p1', state.question.choices, (id, btn, e) => handleAnswerBingo(1, id, btn, e));
-      renderChoices('choices-p2', state.question.choices, (id, btn, e) => handleAnswerBingo(2, id, btn, e));
-    }
-    function handleAnswerBingo(player, choiceId, btn, e) {
-      if (state.winner) return;
-      const attemptedKey = 'attempted' + player;
-      if (state[attemptedKey]) return;
-      if (choiceId !== state.question.correctId) {
-        state.wrongCount++; btn.classList.add('shake'); playWrong();
-        timers.push(setTimeout(() => btn.classList.remove('shake'), 400));
-        return;
-      }
-      state[attemptedKey] = true; state.correctCount++;
-      btn.classList.add('correct-flash'); playCorrect(player);
 
-      const board = player === 1 ? state.board1 : state.board2;
-      const marked = player === 1 ? state.marked1 : state.marked2;
-      const val = Number(state.question.correctId);
-      const idx = board.indexOf(val);
-      if (idx >= 0 && !marked[idx]) marked[idx] = true;
-      fillBoardDOM('board-p' + player, board, marked);
+      updateWhackScoreboard();
+      nextWhackRound();
+    }
 
-      updateMascotCheer(`Keren! ${player === 1 ? avatar1 : avatar2} mencoret angka ${val}! ⭐`, true);
-      if (hasBingo(marked)) {
-        state.winner = player;
-        timers.push(setTimeout(() => showWinPlayer(player, state.game, 'BINGO! 🎉'), 500));
-        return;
+    function updateWhackScoreboard() {
+      const p1El = document.getElementById('whack-p1-score');
+      const p2El = document.getElementById('whack-p2-score');
+      const cardP1 = document.getElementById('score-card-p1');
+      const cardP2 = document.getElementById('score-card-p2');
+      const statusSub = document.getElementById('duel-status-sub');
+
+      if (p1El) p1El.textContent = state.p1;
+      if (p2El) p2El.textContent = state.p2;
+
+      if (!cardP1 || !cardP2 || !statusSub) return;
+
+      cardP1.classList.remove('is-leading');
+      cardP2.classList.remove('is-leading');
+
+      if (state.p1 > state.p2) {
+        cardP1.classList.add('is-leading');
+        statusSub.innerHTML = `<span style="color:var(--candy-coral); font-weight:900;">👑 Pemain 1 Unggul! (${state.p1} - ${state.p2})</span>`;
+      } else if (state.p2 > state.p1) {
+        cardP2.classList.add('is-leading');
+        statusSub.innerHTML = `<span style="color:#009E9F; font-weight:900;">👑 Pemain 2 Unggul! (${state.p2} - ${state.p1})</span>`;
+      } else {
+        statusSub.innerHTML = `🤝 Skor Sama (${state.p1} - ${state.p2})`;
       }
-      if (state.attempted1 && state.attempted2) {
-        timers.push(setTimeout(() => nextBingoQuestion(), 600));
+    }
+
+    function nextWhackRound() {
+      if (state.winner) return;
+      state.lockedRound = false;
+
+      const itemsPool = getWhackItems(state.game.topicId);
+      if (!itemsPool || itemsPool.length === 0) return;
+
+      // Pick target (prefer different from last round)
+      let availableTargets = itemsPool.filter(it => it.id !== state.lastTargetId);
+      if (availableTargets.length === 0) availableTargets = itemsPool;
+      const target = pick(availableTargets);
+      state.targetItem = target;
+      state.lastTargetId = target.id;
+
+      // Pick 3 distractors
+      const otherItems = shuffle(itemsPool.filter(it => it.id !== target.id));
+      const distractors = otherItems.slice(0, 3);
+      const roundItems = [target, ...distractors];
+
+      // Update Target Banner
+      const targetEmojiEl = document.getElementById('whack-target-emoji');
+      const targetNameEl = document.getElementById('whack-target-name');
+      if (targetEmojiEl) {
+        if (target.displayHTML) {
+          targetEmojiEl.innerHTML = target.displayHTML;
+        } else {
+          targetEmojiEl.textContent = target.emoji;
+        }
+      }
+      if (targetNameEl) targetNameEl.textContent = target.name;
+
+      updateMascotCheer(`Ayo cepat tepuk ${target.name}! 🎯✨`, true);
+      speakText(`Ayo tepuk ${target.speakName || target.name}!`);
+
+      // Populate Holes P1 & P2
+      renderWhackPlayerGrid(1, shuffle([...roundItems]));
+      renderWhackPlayerGrid(2, shuffle([...roundItems]));
+
+      // Trigger pop-up animation
+      timers.push(setTimeout(() => {
+        document.querySelectorAll('.whack-critter').forEach(el => el.classList.add('popped'));
+      }, 50));
+    }
+
+    function renderWhackPlayerGrid(player, items) {
+      const grid = document.getElementById(`whack-grid-p${player}`);
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      items.forEach((item, idx) => {
+        const hole = document.createElement('div');
+        hole.className = 'whack-hole';
+
+        const critter = document.createElement('div');
+        critter.className = 'whack-critter';
+        critter.innerHTML = `
+          ${item.displayHTML ? item.displayHTML : `<div class="whack-critter-img">${item.emoji}</div>`}
+          <div class="whack-critter-label">${item.name}</div>
+        `;
+
+        hole.appendChild(critter);
+        hole.addEventListener('click', (e) => handleWhackTap(player, item, critter, hole, e));
+        grid.appendChild(hole);
+      });
+    }
+
+    function handleWhackTap(player, item, critterEl, holeEl, e) {
+      if (state.lockedRound || state.winner) return;
+
+      if (item.id === state.targetItem.id) {
+        // SUCCESS HIT!
+        state.lockedRound = true;
+        state.correctCount++;
+        playCorrect(player);
+
+        critterEl.classList.add('hit-success');
+        const rect = holeEl.getBoundingClientRect ? holeEl.getBoundingClientRect() : { left: window.innerWidth / 2, top: 200, width: 40, height: 40 };
+        burstStarParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+
+        if (player === 1) state.p1++; else state.p2++;
+        updateWhackScoreboard();
+
+        updateMascotCheer(`Horee! ${player === 1 ? 'Pemain 1' : 'Pemain 2'} berhasil menepuk ${item.name}! 🌟`, true);
+        speakText(`${item.speakName || item.name} tepat!`);
+
+        if (state.p1 >= state.targetScore || state.p2 >= state.targetScore) {
+          state.winner = state.p1 >= state.targetScore ? 1 : 2;
+          timers.push(setTimeout(() => showWinPlayer(state.winner, state.game, "Paling Tangkas & Cepat Menepuk Sasaran! 🏆✨"), 550));
+          return;
+        }
+
+        timers.push(setTimeout(() => {
+          document.querySelectorAll('.whack-critter').forEach(el => el.classList.remove('popped'));
+          timers.push(setTimeout(() => nextWhackRound(), 350));
+        }, 600));
+
+      } else {
+        // WRONG TAP
+        state.wrongCount++;
+        playWrong();
+        critterEl.classList.add('shake');
+        timers.push(setTimeout(() => {
+          critterEl.classList.remove('shake');
+          critterEl.classList.remove('popped');
+        }, 400));
       }
     }
 
@@ -6406,7 +8935,7 @@
 
           <div class="story-quest-card">
             <div class="story-char-dialog">
-              <div class="story-char-avatar">🦉</div>
+              <div class="story-char-avatar" id="story-huki-avatar">${getOwlMascotSVG('', 'thinking')}</div>
               <div class="story-char-speech">Bantu Si Huki menyelesaikan pos petualangan ini ya!</div>
             </div>
             
@@ -6430,11 +8959,17 @@
 
     function handleStoryAnswer(choiceId, btn, e) {
       if (state.isLocked) return;
+      const storyHuki = document.getElementById('story-huki-avatar');
       if (choiceId === state.currentQuestion.correctId) {
         state.isLocked = true;
         state.correctCount++;
         btn.classList.add('correct-flash');
         playCorrect(1);
+
+        if (storyHuki) {
+          storyHuki.innerHTML = getOwlMascotSVG('', 'celebrate');
+          storyHuki.classList.add('mascot-jump');
+        }
 
         const rect = btn.getBoundingClientRect ? btn.getBoundingClientRect() : { left: window.innerWidth / 2, top: 200, width: 40, height: 40 };
         burstStarParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
@@ -6452,6 +8987,10 @@
         state.wrongCount++;
         btn.classList.add('shake');
         playWrong();
+        if (storyHuki) {
+          storyHuki.classList.add('shake');
+          setTimeout(() => storyHuki && storyHuki.classList.remove('shake'), 450);
+        }
         updateMascotCheer("Ayo perhatikan lagi, kamu pasti bisa!");
         timers.push(setTimeout(() => btn.classList.remove('shake'), 450));
       }
@@ -6503,7 +9042,7 @@
 
           <div class="bridge-river-scene" id="bridge-river">
             <div class="bridge-walker mascot-3d-wrap" id="bridge-mascot" style="left:12px; top:8px;">
-              ${getOwlMascotSVG()}
+              ${getOwlMascotSVG('', 'thumbsup')}
             </div>
 
             <div class="bridge-structure">
@@ -7503,14 +10042,14 @@
       we.classList.remove('sparkle-burst'); void we.offsetWidth; we.classList.add('sparkle-burst');
 
       document.getElementById('win-title').textContent = `${avatar1} Hebat Sekali! 🌟`;
-      document.getElementById('win-sub').textContent = subText || 'Petualangan belajar yang sangat membanggakan!';
+      document.getElementById('win-sub').textContent = (subText ? subText + ' • ' : '') + 'Kamu dapat +5 Koin Bintang 🪙!';
       renderStars(document.getElementById('win-stars'), 3);
-      awardTrophy();
+      awardCoins(5);
       checkAndShowGiftBox();
       playWin();
       showScreen('win');
       launchConfetti();
-      speakText("Hore! Hebat sekali! Kamu pintar dan menyelesaikan petualangan dengan luar biasa!");
+      speakText("Hore! Hebat sekali! Kamu pintar dan mendapatkan lima koin bintang emas!");
     }
 
     function showWinPlayer(winner, game, tag) {
@@ -7520,24 +10059,24 @@
       we.classList.remove('sparkle-burst'); void we.offsetWidth; we.classList.add('sparkle-burst');
 
       document.getElementById('win-title').textContent = `${winnerAvatar} ${winnerName} Hebat!`;
-      document.getElementById('win-sub').textContent = tag ? tag + ' Petualangan yang seru!' : 'Semua anak hebat dan pintar! 🌟';
+      document.getElementById('win-sub').textContent = (tag ? tag + ' • ' : '') + 'Selamat! Dapat +5 Koin Bintang 🪙!';
       renderStars(document.getElementById('win-stars'), 3);
-      awardTrophy();
+      awardCoins(5);
       checkAndShowGiftBox();
       playWin(); showScreen('win'); launchConfetti();
-      speakText(`Hore! Hebat sekali ${winnerName}! Kamu luar biasa!`);
+      speakText(`Hore! Hebat sekali ${winnerName}! Kamu luar biasa dan dapat lima koin emas!`);
     }
 
     function showCoopWin(game) {
       const we = document.getElementById('win-mascot-box');
       we.classList.remove('sparkle-burst'); void we.offsetWidth; we.classList.add('sparkle-burst');
       document.getElementById('win-title').textContent = `${avatar1}${avatar2} Menang Bersama!`;
-      document.getElementById('win-sub').textContent = `Target tercapai dengan kerja sama hebat! 🎉`;
+      document.getElementById('win-sub').textContent = `Target tercapai dengan kerja sama hebat! Dapat +5 Koin Bintang 🪙!`;
       renderStars(document.getElementById('win-stars'), 3);
-      awardTrophy();
+      awardCoins(5);
       checkAndShowGiftBox();
       playWin(); showScreen('win'); launchConfetti();
-      speakText("Hore! Kita berhasil menang bersama! Kerja sama yang luar biasa!");
+      speakText("Hore! Kita berhasil menang bersama! Kerja sama luar biasa dan dapat lima koin emas!");
     }
 
     function renderStars(el, n) {
@@ -7566,7 +10105,9 @@
         giftIcon.onclick = () => {
           playGiftOpen();
           burstStarParticles(window.innerWidth / 2, window.innerHeight / 2);
-          unlockedStickers.push(newSticker.id);
+          if (!unlockedStickers.includes(newSticker.id)) {
+            unlockedStickers.push(newSticker.id);
+          }
           saveStickers();
 
           giftIcon.style.display = 'none';
@@ -7617,7 +10158,8 @@
     const stickersModal = document.getElementById('stickers-modal');
     function openStickersModal() {
       playPop();
-      document.getElementById('modal-sticker-count').textContent = unlockedStickers.length;
+      unlockedStickers = getCleanUnlockedStickers();
+      document.getElementById('modal-sticker-count').textContent = getUnlockedStickersCount();
       const grid = document.getElementById('stickers-grid');
       grid.innerHTML = '';
 
@@ -7651,34 +10193,380 @@
     });
 
     /* ============================================================
-       SETTINGS MODAL
+       TAMAN BERMAIN SI HUKI (FULL SCREEN & PANORAMIC MAP)
+    ============================================================ */
+    let previousPlaygroundScreen = 'topic';
+    const wahanaDrawerPanel = document.getElementById('wahana-drawer-panel');
+    const wahanaDrawerBackdrop = document.getElementById('wahana-drawer-backdrop');
+    const wahanaDetailModal = document.getElementById('wahana-detail-modal');
+    const wahanaDetailContent = document.getElementById('wahana-detail-card-content');
+
+    function syncPlaygroundTopbarWidth() {
+      const mapEl = document.getElementById('playground-map-container');
+      const topbar = document.querySelector('.playground-topbar');
+      if (mapEl && topbar) {
+        const mapWidth = mapEl.getBoundingClientRect().width;
+        if (mapWidth > 0) {
+          topbar.style.maxWidth = `${Math.round(mapWidth)}px`;
+        }
+      }
+    }
+
+    function openPlaygroundScreen() {
+      playPop();
+      // Record current screen before switching
+      for (const [key, el] of Object.entries(screens)) {
+        if (el && el.classList.contains('active') && key !== 'playground') {
+          previousPlaygroundScreen = key;
+          break;
+        }
+      }
+      showScreen('playground');
+      updateCoinUI();
+      renderPlaygroundMap();
+      renderWahanaDrawerGrid();
+      setTimeout(syncPlaygroundTopbarWidth, 50);
+
+      // Welcome voice over from Huki
+      speakText("Selamat datang di Taman Bermain Si Huki! Sentuh wahana untuk bermain atau buka Toko Wahana untuk memasang wahana baru ya! ✨");
+    }
+
+    function closePlaygroundScreen() {
+      playPop();
+      closeShopDrawer();
+      closeQuickBuyModal();
+      showScreen(previousPlaygroundScreen || 'topic');
+    }
+
+    function openShopDrawer() {
+      playPop();
+      renderWahanaDrawerGrid();
+      if (wahanaDrawerPanel) wahanaDrawerPanel.classList.add('active');
+      if (wahanaDrawerBackdrop) wahanaDrawerBackdrop.classList.add('active');
+    }
+
+    function closeShopDrawer() {
+      if (wahanaDrawerPanel) wahanaDrawerPanel.classList.remove('active');
+      if (wahanaDrawerBackdrop) wahanaDrawerBackdrop.classList.remove('active');
+    }
+
+    function closeQuickBuyModal() {
+      if (wahanaDetailModal) wahanaDetailModal.classList.remove('active');
+    }
+
+    function renderPlaygroundMap(newlyPurchasedId = null) {
+      const container = document.getElementById('playground-map-spots');
+      if (!container) return;
+      container.innerHTML = '';
+
+      WAHANA_ITEMS.forEach(item => {
+        const isInstalled = unlockedWahana.includes(item.id);
+        const spotEl = document.createElement('div');
+        spotEl.id = `map-spot-${item.id}`;
+        spotEl.className = `playground-spot ${isInstalled ? 'unlocked' : 'locked'}`;
+        spotEl.style.left = `${item.spot.left}%`;
+        spotEl.style.top = `${item.spot.top}%`;
+        spotEl.style.width = `${item.spot.width}%`;
+        spotEl.style.height = `${item.spot.height}%`;
+
+        if (isInstalled) {
+          spotEl.title = `${item.name} (Sentuh untuk bermain!)`;
+          spotEl.innerHTML = `
+            <img src="${item.image}" class="playground-spot-img" alt="${item.name}">
+          `;
+          spotEl.addEventListener('click', (e) => {
+            interactInstalledWahana(item, spotEl, e);
+          });
+
+          if (item.id === newlyPurchasedId) {
+            spotEl.classList.add('bouncing');
+            setTimeout(() => spotEl.classList.remove('bouncing'), 700);
+          }
+        } else {
+          spotEl.title = `Terkunci: ${item.name} (${item.cost} Koin)`;
+          spotEl.innerHTML = `
+            <img src="${item.siluet}" class="playground-spot-siluet" alt="Terkunci: ${item.name}">
+            <div class="spot-lock-badge"><span>🔒</span> 🪙 ${item.cost}</div>
+          `;
+          spotEl.addEventListener('click', (e) => {
+            openQuickBuyModal(item, spotEl, e);
+          });
+        }
+
+        container.appendChild(spotEl);
+      });
+    }
+
+    function interactInstalledWahana(item, spotEl, e) {
+      playPop();
+      playShimmer();
+      spotEl.classList.remove('bouncing');
+      // Trigger reflow for animation restart
+      void spotEl.offsetWidth;
+      spotEl.classList.add('bouncing');
+      setTimeout(() => spotEl.classList.remove('bouncing'), 700);
+
+      const rect = spotEl.getBoundingClientRect();
+      burstStarParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      speakText(item.interactSpeech);
+    }
+
+    function openQuickBuyModal(item, spotEl, e) {
+      playPop();
+      if (!wahanaDetailModal || !wahanaDetailContent) return;
+
+      const isInstalled = unlockedWahana.includes(item.id);
+      const canAfford = coinCount >= item.cost;
+
+      let actionBtnHTML = '';
+      if (isInstalled) {
+        actionBtnHTML = `<button class="action-btn primary jelly-btn" style="background:#10B981;" id="btn-quick-installed">✅ Sudah Terpasang di Taman</button>`;
+      } else if (canAfford) {
+        actionBtnHTML = `<button class="action-btn primary jelly-btn" id="btn-quick-buy" style="background:linear-gradient(135deg, #FEF08A, #F59E0B); color:#78350F; border-color:#F59E0B;">🪙 Beli Sekarang (${item.cost} Koin)</button>`;
+      } else {
+        actionBtnHTML = `
+          <button class="action-btn secondary" style="cursor:not-allowed; opacity:0.8;" disabled>🔒 Butuh 🪙 ${item.cost} Koin (Koinmu: ${coinCount})</button>
+          <div style="font-size:12px; font-weight:700; color:#0284C7; margin-top:2px;">Ayo mainkan kuis & permainan untuk kumpulkan koin! 🌟</div>
+        `;
+      }
+
+      wahanaDetailContent.innerHTML = `
+        <div class="wahana-detail-img-wrap">
+          <img src="${item.image}" alt="${item.name}">
+        </div>
+        <div class="wahana-detail-title">${item.name}</div>
+        <div class="wahana-detail-desc">${item.desc}</div>
+        <div class="wahana-detail-actions">
+          ${actionBtnHTML}
+          <button class="action-btn secondary modal-close jelly-btn" id="btn-close-quick-buy">Tutup</button>
+        </div>
+      `;
+
+      wahanaDetailModal.classList.add('active');
+
+      const quickBuyBtn = document.getElementById('btn-quick-buy');
+      if (quickBuyBtn) {
+        quickBuyBtn.addEventListener('click', (e) => {
+          buyWahana(item, quickBuyBtn, e);
+          closeQuickBuyModal();
+        });
+      }
+
+      document.getElementById('btn-close-quick-buy')?.addEventListener('click', () => {
+        playPop();
+        closeQuickBuyModal();
+      });
+
+      if (!isInstalled) {
+        if (canAfford) {
+          speakText(`Ini wahana ${item.name}! Harganya ${item.cost} koin. Mau kamu pasang di taman? ✨`);
+        } else {
+          speakText(`Ini wahana ${item.name}! Harganya ${item.cost} koin. Koinmu sekarang ada ${coinCount}. Ayo main lagi untuk kumpulkan koin! 🌟`);
+        }
+      }
+    }
+
+    function renderWahanaDrawerGrid() {
+      const shopGrid = document.getElementById('wahana-drawer-grid');
+      if (!shopGrid) return;
+      shopGrid.innerHTML = '';
+
+      WAHANA_ITEMS.forEach(item => {
+        const isInstalled = unlockedWahana.includes(item.id);
+        const canAfford = coinCount >= item.cost;
+
+        const card = document.createElement('div');
+        card.className = `wahana-card ${isInstalled ? 'unlocked' : ''}`;
+        
+        let btnHTML = '';
+        if (isInstalled) {
+          btnHTML = `<button class="wahana-buy-btn installed">✅ Terpasang</button>`;
+        } else if (canAfford) {
+          btnHTML = `<button class="wahana-buy-btn can-afford jelly-btn" data-id="${item.id}">🪙 ${item.cost} Beli</button>`;
+        } else {
+          btnHTML = `<button class="wahana-buy-btn cant-afford" title="Koin belum cukup">🔒 🪙 ${item.cost}</button>`;
+        }
+
+        card.innerHTML = `
+          <div class="wahana-card-thumb">
+            <img src="${item.image}" alt="${item.name}">
+          </div>
+          <div class="wahana-card-info">
+            <div class="wahana-card-name">${item.name}</div>
+            <div class="wahana-card-desc">${item.desc}</div>
+            ${btnHTML}
+          </div>
+        `;
+
+        if (!isInstalled && canAfford) {
+          const buyBtn = card.querySelector('.wahana-buy-btn.can-afford');
+          if (buyBtn) {
+            buyBtn.addEventListener('click', (e) => {
+              buyWahana(item, buyBtn, e);
+            });
+          }
+        }
+
+        shopGrid.appendChild(card);
+      });
+    }
+
+    function buyWahana(item, btnEl, e) {
+      if (coinCount < item.cost) {
+        playWrong();
+        speakText("Koinmu belum cukup. Ayo mainkan kuis seru untuk mengumpulkan koin!");
+        return;
+      }
+
+      coinCount -= item.cost;
+      safeStorageSet('coinCount', String(coinCount));
+      
+      if (!unlockedWahana.includes(item.id)) {
+        unlockedWahana.push(item.id);
+        safeStorageSet('unlockedWahana', JSON.stringify(unlockedWahana));
+      }
+
+      playPurchaseFanfare();
+      burstStarParticles(window.innerWidth / 2, window.innerHeight / 2);
+      updateCoinUI();
+      renderPlaygroundMap(item.id);
+      renderWahanaDrawerGrid();
+
+      speakText(`Hore! Kamu berhasil memasang ${item.name} di Taman Si Huki!`);
+    }
+
+    // Event listeners for playground
+    document.getElementById('btn-open-playground')?.addEventListener('click', openPlaygroundScreen);
+    document.getElementById('btn-open-playground-topic')?.addEventListener('click', openPlaygroundScreen);
+    document.getElementById('btn-coins-menu')?.addEventListener('click', openPlaygroundScreen);
+    document.getElementById('btn-coins-topic')?.addEventListener('click', openPlaygroundScreen);
+    document.getElementById('btn-coins-playground')?.addEventListener('click', () => {
+      playPop();
+      speakText(`Kamu memiliki ${coinCount} koin bintang emas! Mainkan game seru untuk menambah koin! ⭐`);
+    });
+    document.getElementById('btn-back-from-playground')?.addEventListener('click', closePlaygroundScreen);
+    document.getElementById('btn-toggle-shop-drawer')?.addEventListener('click', openShopDrawer);
+    document.getElementById('btn-close-shop-drawer')?.addEventListener('click', closeShopDrawer);
+    document.getElementById('wahana-drawer-backdrop')?.addEventListener('click', closeShopDrawer);
+    document.getElementById('wahana-drawer-handle')?.addEventListener('click', closeShopDrawer);
+
+    if (window.ResizeObserver) {
+      const mapContainerEl = document.getElementById('playground-map-container');
+      if (mapContainerEl) {
+        new ResizeObserver(() => syncPlaygroundTopbarWidth()).observe(mapContainerEl);
+      }
+    }
+    window.addEventListener('resize', syncPlaygroundTopbarWidth);
+
+    /* ============================================================
+       SETTINGS MODAL & AUDIO CONTROLS
     ============================================================ */
     const settingsModal = document.getElementById('settings-modal');
     function openSettings() {
       playPop();
+      document.getElementById('toggle-bgm').classList.toggle('on', settings.bgm);
       document.getElementById('toggle-sound').classList.toggle('on', settings.sound);
       document.getElementById('toggle-voice').classList.toggle('on', settings.voice);
+      
+      const sliderBgm = document.getElementById('slider-bgm-vol');
+      const valBgm = document.getElementById('val-bgm-vol');
+      if (sliderBgm && valBgm) {
+        const bgmPercent = Math.round((settings.bgmVolume ?? 0.7) * 100);
+        sliderBgm.value = bgmPercent;
+        valBgm.textContent = bgmPercent + '%';
+      }
+
+      const sliderSfx = document.getElementById('slider-sfx-vol');
+      const valSfx = document.getElementById('val-sfx-vol');
+      if (sliderSfx && valSfx) {
+        const sfxPercent = Math.round((settings.sfxVolume ?? 0.85) * 100);
+        sliderSfx.value = sfxPercent;
+        valSfx.textContent = sfxPercent + '%';
+      }
+
+      document.querySelectorAll('.voice-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.vprofile === (settings.voiceProfile || 'huki'));
+      });
+
       document.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b.dataset.diff === settings.difficulty));
       settingsModal.classList.add('active');
     }
+
     document.getElementById('btn-settings').addEventListener('click', openSettings);
     document.getElementById('btn-settings-topic').addEventListener('click', openSettings);
+    document.getElementById('btn-settings-game')?.addEventListener('click', openSettings);
     document.getElementById('btn-close-settings').addEventListener('click', () => {
       playPop();
       settingsModal.classList.remove('active');
     });
+
+    // Music Toggle Buttons in Header
+    document.querySelectorAll('.music-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        playPop();
+        BgmEngine.toggle();
+      });
+    });
+
+    // BGM Toggle
+    document.getElementById('toggle-bgm').addEventListener('click', function () {
+      BgmEngine.toggle();
+      this.classList.toggle('on', settings.bgm);
+      if (settings.bgm) playPop();
+    });
+
+    // BGM Volume Slider
+    document.getElementById('slider-bgm-vol')?.addEventListener('input', function () {
+      const val = Number(this.value);
+      document.getElementById('val-bgm-vol').textContent = val + '%';
+      BgmEngine.setVolume(val / 100);
+    });
+
+    // SFX Toggle
     document.getElementById('toggle-sound').addEventListener('click', function () {
       settings.sound = !settings.sound;
       this.classList.toggle('on', settings.sound);
       saveSettings();
       if (settings.sound) playPop();
     });
+
+    // SFX Volume Slider
+    document.getElementById('slider-sfx-vol')?.addEventListener('input', function () {
+      const val = Number(this.value);
+      document.getElementById('val-sfx-vol').textContent = val + '%';
+      settings.sfxVolume = val / 100;
+      saveSettings();
+      playPop();
+    });
+
+    // Voice Toggle
     document.getElementById('toggle-voice').addEventListener('click', function () {
       settings.voice = !settings.voice;
       this.classList.toggle('on', settings.voice);
       saveSettings();
       if (settings.voice) speakText('Suara narasi ceria aktif!');
     });
+
+    // Voice Persona Selection
+    document.querySelectorAll('.voice-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.voice-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        settings.voiceProfile = btn.dataset.vprofile;
+        saveSettings();
+        playPop();
+
+        if (settings.voiceProfile === 'bunda') {
+          speakText('Halo sayang! Bunda siap menemani belajarmu!');
+        } else if (settings.voiceProfile === 'sahabat') {
+          speakText('Hai kawan! Ayo bermain dan belajar seru bareng aku!');
+        } else {
+          speakText('Halo! Aku Si Huki ceria! Ayo kita bertualang dan belajar seru bersama!');
+        }
+      });
+    });
+
+    // Difficulty Segmented Control
     document.querySelectorAll('.seg-btn').forEach(b => {
       b.addEventListener('click', () => {
         settings.difficulty = b.dataset.diff;
@@ -7702,6 +10590,9 @@
     ============================================================ */
     function enterGameApp() {
       playPop();
+      if (settings.bgm && !BgmEngine.isPlaying) {
+        BgmEngine.start('menu');
+      }
       showScreen('topic');
       speakText('Selamat datang di Taman Pintar! Pilih dunia belajarmu ya!');
     }
@@ -7709,6 +10600,9 @@
     document.getElementById('btn-splash-start')?.addEventListener('click', enterGameApp);
     document.getElementById('splash-mascot-box')?.addEventListener('click', () => {
       playPop();
+      if (settings.bgm && !BgmEngine.isPlaying) {
+        BgmEngine.start('menu');
+      }
       speakText('Halo! Aku Si Huki! Yuk tekan tombol Mulai Petualangan!');
     });
 
@@ -7716,8 +10610,8 @@
       renderMascots();
       buildTopicScreen();
       await loadPersisted();
-      updateTrophyUI();
       updateStickersBadgeUI();
+      BgmEngine.updateFloatingButtonUI();
     })();
   </script>
 </body>
